@@ -1,0 +1,3 @@
+#!/bin/bash
+set -e
+ssh ubuntu@images.hpedemo.net

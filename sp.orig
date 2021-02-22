@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+cd $QUAKE
+make clean && make dev-portal
+cp portal/cmd/steeld/steeld ~/portal
+cp portal/cmd/steeld/steeld_config.yml ~/portal
+cd ~/portal
+./start-portal.sh
+

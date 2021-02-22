@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+cd $QUAKE
+make distclean && make dev-portal
+cd simulation/sim-portal
+make
+echo ===
+echo From a separate terminal, run commands:
+echo cd $QUAKE/portal/gui
+echo npm start
+echo ===
+./run-portal.sh
+

@@ -1,0 +1,1 @@
+/home/sdasgupta/portal/publish_rack_controller.sh
