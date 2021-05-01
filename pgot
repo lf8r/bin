@@ -1,0 +1,3 @@
+#!/bin/bash
+go test -bench=. -benchmem -cpuprofile /tmp/cpuprofile.out
+go tool pprof /tmp/cpuprofile.out 
