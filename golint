@@ -1,0 +1,3 @@
+#!/bin/bash
+~/go/bin/golint
+golangci-lint run --no-config --disable-all -E deadcode,unparam,gocritic,govet,gofmt,exportloopref "$@"

@@ -1,1 +1,2 @@
-/home/sdasgupta/scripts/gendiag.sh
+#!/bin/bash
+git difftool `pb`

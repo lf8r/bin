@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+cd $QUAKE/portal/cmd/steeld
+./build.sh

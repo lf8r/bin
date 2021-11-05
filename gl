@@ -1,2 +1,2 @@
 #!/bin/bash
-golangci-lint run
+~/go/bin/golangci-lint run

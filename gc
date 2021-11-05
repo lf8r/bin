@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+git fsck --full
+git reflog expire --expire-unreachable=now --all
+git gc --prune=now
+git remote prune origin
+git fsck --full

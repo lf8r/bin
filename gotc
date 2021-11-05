@@ -1,0 +1,4 @@
+#!/bin/bash
+#go test -race --v ./... -count=1 -timeout 20m -bench=. -coverprofile=/tmp/coverage.out 
+got
+go tool cover -html=/tmp/coverage.out

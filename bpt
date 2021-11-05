@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+cd $QUAKE/controllers/rackcontroller/main/switchmgr/switchctl/plugin/test
+export CGO_ENABLED=0
+go build
+scp test sdasgupta@win:.

@@ -1,0 +1,7 @@
+#!/bin/bash
+~/go/bin/golangci-lint run | grep deadcode
+~/go/bin/golangci-lint run | grep unparam
+~/go/bin/golangci-lint run | grep gocritic
+~/go/bin/golangci-lint run | grep govet
+~/go/bin/golangci-lint run | grep gofmt
+~/go/bin/golangci-lint run | grep exportloopref

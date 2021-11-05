@@ -1,0 +1,5 @@
+#!/bin/bash
+unset GO111MODULE
+unset GOFLAGS
+unset GOPATH
+export PATH=$PATH:~/go/bin

@@ -1,2 +1,2 @@
 #!/bin/bash
-go test ./... -count=1 -bench=.
+go test -race --v ./... -count=1 -timeout 20m -bench=. -benchmem -coverprofile=/tmp/coverage.out "$@"
