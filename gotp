@@ -1,3 +1,5 @@
 #!/bin/bash
-#go test -race --v ./... -count=1 -timeout 20m -bench=. -benchmem -coverprofile=/tmp/coverage.out "$@"
-got -cpuprofile cpu.prof -memprofile mem.prof "$@" 
+echo "CPU profiling"
+got -cpuprofile cpu.prof "$@"
+echo "Memory profiling"
+got -memprofile mem.prof "$@" 

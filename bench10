@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+OUTFILE=$1
+if [ -z $OUTFILE ]
+  then
+    echo "Need benchmark save file."
+fi
+
+rm -rf $OUTFILE
+touch $OUTFILE
+for i in {1..10} 
+    do got >> $OUTFILE 
+done

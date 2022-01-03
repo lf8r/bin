@@ -1,4 +1,4 @@
 #!/bin/sh
-cd ~/go/src/github.com/lf8r
+cd ~/lf8r/github.com/lf8r
 . gomod
 export PATH=/opt/go/bin:$PATH
