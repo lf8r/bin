@@ -1,1 +1,1 @@
-/home/sdasgupta/scripts/cdquake.sh
+cdquake.sh
