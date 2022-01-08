@@ -1,0 +1,4 @@
+#!/bin/bash
+VM=ub-amd64.vmwarevm
+vmrun -T fusion start ~/vms/$VM
+
