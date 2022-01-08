@@ -1,0 +1,7 @@
+#!/bin/bash
+rsync -Partv /Volumes/8TBA/Documents /Volumes/8TBB --delete
+rsync -Partv /Volumes/8TBA/Downloads /Volumes/8TBB --delete
+rsync -Partv /Volumes/8TBA/lightroom /Volumes/8TBB --delete
+rsync -Partv /Volumes/8TBA/vms /Volumes/8TBB --delete
+rsync -Partv /Volumes/8TBA/Virtual\ Machines /Volumes/8TBB --delete
+rsync -Partv /Volumes/8TBA/original-images /Volumes/8TBB --delete

@@ -9,3 +9,6 @@ export HOSTNAME=`hostname`
 export EXTBASE=/Volumes/NVME02
 mkdir -p $EXTBASE/$HOSTNAME
 rsync -Partv ~/vms $EXTBASE/$HOSTNAME --delete
+rsync -Partv ~/Downloads $EXTBASE/$HOSTNAME
+rsync -Partv ~/Desktop $EXTBASE/$HOSTNAME
+rsync -Partv --exclude Library/ --exclude "Hewlett Packard Enterprise/" --exclude "OneDrive - Hewlett Packard Enterprise" ~/Documents $EXTBASE/$HOSTNAME

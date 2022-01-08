@@ -1,0 +1,25 @@
+#!/bin/bash
+if pgrep  "VirtualBox" >/dev/null
+then
+   echo "Cannot continue since VirtualBox is running."
+   exit 1
+fi
+if pgrep  "VMware Fusion" >/dev/null
+then
+   echo "Cannot continue since VMware Fusion is running."
+   exit 1
+fi
+if pgrep  "Lightroom" >/dev/null
+then
+   echo "Cannot continue since Lightroom is running."
+   exit 1
+fi
+
+#export SRC=/Volumes/NVME02/vms
+export SRC=~/vms
+rsync -Partv "$SRC" /Volumes/8TBA --delete 
+rsync -Partv --exclude Library/ --exclude "Hewlett Packard Enterprise/" ~/Documents /Volumes/8TBA 
+rsync -Partv ~/Downloads /Volumes/8TBA 
+rsync -Partv ~/Desktop /Volumes/8TBA
+rsync -Partv /Volumes/NVME02/lightroom /Volumes/8TBA --delete
+rsync -Partv /Users/sdasgupta/Library/Containers/com.utmapp.UTM/Data/Documents /Volumes/8TBA/UTM
