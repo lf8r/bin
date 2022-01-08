@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+if pgrep  "VMware Fusion" >/dev/null
+then
+   echo "Cannot continue since VMware Fusion is running."
+   exit 1
+fi
+export HOSTNAME=`hostname`
+export EXTBASE=/Volumes/NVME02
+mkdir -p $EXTBASE/$HOSTNAME
+rsync -Partv ~/vms $EXTBASE/$HOSTNAME --delete

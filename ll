@@ -1,1 +1,2 @@
-/home/sdasgupta/scripts/ll.sh
+#!/bin/sh
+ls -l "$@"
