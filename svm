@@ -1,4 +1,4 @@
 #!/bin/bash
-VM=ub-amd64.vmwarevm
-vmrun -T fusion start ~/vms/$VM
-
+#VBoxManage startvm vm
+vmrun -T fusion start ~/vms/vmclone.vmwarevm
+#vmrun -T fusion start /Volumes/NVME02/vms/vmclone.vmwarevm
