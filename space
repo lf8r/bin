@@ -1,1 +1,2 @@
-/home/sdasgupta/scripts/space.sh
+#!/bin/sh
+du -csh
