@@ -36,7 +36,7 @@ export QUAKE=/home/sdasgupta/go/src/github.com/hpe-hcss/quake
 # ==== End Added by install_quake_development_env.sh === 
 
 # Portal setup instructions
-export PATH=$PATH:$QUAKE/portal/cmd/steelctl:~/go/bin
+export PATH=$PATH:$QUAKE/portal/cmd/steelctl:~/go/bin:~/.local/protoc-3/bin
 
 export LF8RGO=$GOPATH/src/github.com/lf8r/go
 
