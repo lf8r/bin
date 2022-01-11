@@ -35,9 +35,12 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/b
 export QUAKE=/home/sdasgupta/go/src/github.com/hpe-hcss/quake
 # ==== End Added by install_quake_development_env.sh === 
 
+export GOPRIVATE=github.com/lf8r
 # Portal setup instructions
 export PATH=$PATH:$QUAKE/portal/cmd/steelctl:~/go/bin:~/.local/protoc-3/bin
 
 export LF8RGO=$GOPATH/src/github.com/lf8r/go
 
 export GITHUB_TOKEN=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
+
+export PATH=$PATH:"/Applications/VMware Fusion.app/Contents/Library"
