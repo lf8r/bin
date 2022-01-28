@@ -6,9 +6,9 @@ then
    exit 1
 fi
 export HOSTNAME=`hostname`
-export EXTBASE=/Volumes/NVME02
+export EXTBASE=~/backup1
 mkdir -p $EXTBASE/$HOSTNAME
-rsync -Partv ~/vms $EXTBASE/$HOSTNAME
+rsync -Partv ~/vms $EXTBASE/$HOSTNAME 
 rsync -Partv ~/Downloads $EXTBASE/$HOSTNAME
 rsync -Partv ~/Desktop $EXTBASE/$HOSTNAME
 rsync -Partv --exclude Library/ --exclude "Hewlett Packard Enterprise/" --exclude "OneDrive - Hewlett Packard Enterprise" ~/Documents $EXTBASE/$HOSTNAME
