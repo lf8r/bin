@@ -5,10 +5,9 @@ then
    echo "Cannot continue since VMware Fusion is running."
    exit 1
 fi
-export HOSTNAME=`hostname`
 export EXTBASE=~/backup1
-mkdir -p $EXTBASE/$HOSTNAME
-rsync -Partv ~/vms $EXTBASE/$HOSTNAME 
-rsync -Partv ~/Downloads $EXTBASE/$HOSTNAME
-rsync -Partv ~/Desktop $EXTBASE/$HOSTNAME
-rsync -Partv --exclude Library/ --exclude "Hewlett Packard Enterprise/" --exclude "OneDrive - Hewlett Packard Enterprise" ~/Documents $EXTBASE/$HOSTNAME
+rsync -Partv ~/vms $EXTBASE 
+rsync -Partv ~/lightroom $EXTBASE
+rsync -Partv ~/Downloads $EXTBASE
+rsync -Partv ~/Desktop $EXTBASE
+rsync -Partv --exclude Library/ --exclude "Hewlett Packard Enterprise/" --exclude "OneDrive - Hewlett Packard Enterprise" ~/Documents $EXTBASE
