@@ -5,8 +5,14 @@ then
    echo "Cannot continue since VMware Fusion is running."
    exit 1
 fi
+if pgrep "prl_client_app" >/dev/null
+then
+   echo "Cannot continue since Parallels is running."
+   exit 1
+fi
 export EXTBASE=~/backup1
-rsync -Partv ~/vms $EXTBASE 
+rsync -Partv ~/vms $EXTBASE
+rsync -Partv ~/Parallels $EXTBASE
 rsync -Partv ~/lightroom $EXTBASE
 rsync -Partv ~/Downloads $EXTBASE
 rsync -Partv ~/Desktop $EXTBASE
