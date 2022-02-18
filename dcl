@@ -1,2 +1,2 @@
 #!/bin/bash
-docker container list
+docker ps -a 
