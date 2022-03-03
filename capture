@@ -1,0 +1,4 @@
+#!/bin/bash
+. q
+git diff HEAD > /var/tmp/changes.diff
+echo "Changes against HEAD have been saved in /var/tmp/changes.diff"
