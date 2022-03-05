@@ -1,0 +1,4 @@
+#!/bin/sh
+cd ~/lf8r/github.com/lf8r
+. gomod
+export PATH=/opt/go18/go/bin:$PATH
