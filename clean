@@ -1,1 +1,6 @@
-/home/sdasgupta/scripts/cleanup.sh
+#!/bin/sh
+rm -rf $HOME/.lemminx
+rm -rf $HOME/.cache/go-build
+docker system prune --all --force
+sudo journalctl --vacuum-time=10d
+
