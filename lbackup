@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+set -e
+if pgrep  "VMware Fusion" >/dev/null
+then
+   echo "Cannot continue since VMware Fusion is running."
+   exit 1
+fi
+if pgrep "prl_client_app" >/dev/null
+then
+   echo "Cannot continue since Parallels is running."
+   exit 1
+fi
+lhtoq
