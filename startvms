@@ -1,0 +1,3 @@
+#!/bin/bash
+vboxmanage startvm vm1 --type headless
+vboxmanage startvm vm2 --type headless
