@@ -1,2 +1,2 @@
 #!/bin/bash
-cockroach init --insecure --host=localhost:26257
+cockroach init --insecure --host=:26257

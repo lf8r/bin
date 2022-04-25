@@ -1,2 +1,2 @@
 #!/bin/bash
-pkill cockroach
+pkill -9 cockroach
