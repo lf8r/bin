@@ -4,3 +4,5 @@ rm -rf $HOME/.cache/go-build
 docker system prune --all --force
 sudo journalctl --vacuum-time=10d
 go clean -modcache
+go clean -cache
+rm -rf ~/.cache/golangci-lint/*
