@@ -2,3 +2,5 @@
 set -e
 cd $QUAKE/portal/cmd/steeld
 ./build.sh
+cd ~/steeld
+./update-portal.sh
