@@ -1,2 +1,3 @@
 #!/bin/bash
-cd $QUAKE/portal/cmd/steeld
+cd ~/steeld
+

@@ -2,4 +2,5 @@
 unset GO111MODULE
 unset GOFLAGS
 unset GOPATH
+go env -w GO111MODULE=on
 export PATH=~/go/bin:$PATH
