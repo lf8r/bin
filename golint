@@ -1,3 +1,4 @@
 #!/bin/bash
 #golangci-lint run --no-config --disable-all -E deadcode,unparam,gocritic,govet,gofmt,exportloopref,misspell "$@"
 time golangci-lint run --new-from-rev $(git merge-base -a HEAD master) --timeout 600s --verbose --max-issues-per-linter 0 --max-same-issues 0
+time golangci-lint run --new-from-rev $(git merge-base -a HEAD main) --timeout 600s --verbose --max-issues-per-linter 0 --max-same-issues 0

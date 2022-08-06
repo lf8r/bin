@@ -1,4 +1,5 @@
 #!/bin/bash
 . gomod
 export PATH=/opt/go/bin:$PATH
-cd ~/k8s-dev/k8sdev
+export K8SBASE=~/k8s-dev/k8sdev
+cd $K8SBASE 
