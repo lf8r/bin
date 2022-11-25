@@ -1,1 +1,2 @@
-/home/sdasgupta/scripts/cup.sh
+#!/bin/bash
+rm -f /Volumes/NVME02/exported/*
