@@ -3,5 +3,15 @@ for f in *.jpg;
 do
 	echo Processing $f
 	echo $f
-	convert -border 150x150 -pointsize 60 -font Helvetica -bordercolor "#000000" -fill white -gravity north -annotate +100+12 "S U B H A J I T   D A S G U P T A\nR E F L E C T I O N S" -font Helvetica -pointsize 60 -fill white -gravity south -annotate +100+12 "${FILENAME}\n" $f $f;
+	FILENAME=$f
+	# Set variable for the current filename
+	CURRENTIMAGE=$f
+	MODEL=`convert $CURRENTIMAGE -format "%[exif:Model]" info:`
+	CAPTURE_TIME=`convert $CURRENTIMAGE -format "%[exif:DateTimeOriginal]" info:`
+	EXPOSURE=`convert $CURRENTIMAGE -format "%[exif:FNumber]" info:`
+	SPEED=`convert $CURRENTIMAGE -format "%[exif:ExposureTime]" info:`
+	LENS=`convert $CURRENTIMAGE -format "%[exif:LensModel]" info:`
+	ISO=`convert $CURRENTIMAGE -format "%[exif:PhotographicSensitivity]" info:`
+	IMAGE_NUMBER=`exiftool $CURRENTIMAGE | grep "Image Number"`
+	convert -border 150x150 -pointsize 60 -font Helvetica -bordercolor "#000000" -fill white -gravity north -annotate +100+12 "S U B H A J I T   D A S G U P T A\nR E F L E C T I O N S" -font Helvetica -pointsize 40 -fill white -gravity south -annotate +100+12 "Camera ${MODEL} | Capture ${CAPTURE_TIME} | Exposure ${EXPOSURE} | Speed ${SPEED} | ISO ${ISO}\n Lens ${LENS}\n${IMAGE_NUMBER}" $f $f;
 done
