@@ -11,6 +11,7 @@ then
    echo "Cannot continue since Parallels is running."
    exit 1
 fi
+rsync -PartvL ~/backup3/. ~/backup4/. --exclude .Spot* --exclude /Users/*/Desktop/Relocated\ Items.nosync --exclude .TemporaryItems --exclude /**/.Trashes --exclude .Trashes
 rsync -PartvL ~/backup2/. ~/backup3/. --exclude .Spot* --exclude /Users/*/Desktop/Relocated\ Items.nosync --exclude .TemporaryItems --exclude /**/.Trashes --exclude .Trashes
 rsync -PartvL ~/backup1/. ~/backup2/. --exclude .Spot* --exclude /Users/*/Desktop/Relocated\ Items.nosync --exclude .TemporaryItems --exclude /**/.Trashes --exclude .Trashes
 htoq
