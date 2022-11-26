@@ -1,0 +1,11 @@
+#!/bin/bash
+if pgrep  "Adobe Lightroom" >/dev/null
+then
+   echo "Cannot continue since Adobe Lightroom is running."
+   exit 1
+fi
+
+rsync -Partv ~/lightroom ~/backup1
+rsync -Partv ~/lightroom ~/backup2
+rsync -Partv ~/lightroom ~/backup3
+rsync -Partv /Volumes/8TBA/original-images /Volumes/8TBB
