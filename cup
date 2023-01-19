@@ -1,2 +1,3 @@
 #!/bin/bash
 rm -f /Volumes/NVME02/exported/*
+rm -f ~/lightroom/unprocessed/*.DAT

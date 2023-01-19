@@ -11,9 +11,23 @@ then
    exit 1
 fi
 export EXTBASE=~/backup1
-rsync -Partv ~/vms $EXTBASE
-rsync -Partv ~/Parallels $EXTBASE
-rsync -Partv ~/lightroom $EXTBASE
-rsync -Partv ~/Downloads $EXTBASE
-rsync -Partv ~/Desktop $EXTBASE
-rsync -Partv --exclude Library/ --exclude "Hewlett Packard Enterprise/" --exclude "OneDrive - Hewlett Packard Enterprise" ~/Documents $EXTBASE
+htoq2
+export EXTBASE=~/backup2
+htoq2
+export EXTBASE=~/backup3
+htoq2
+export EXTBASE=~/backup5
+htoq2
+#export EXTBASE=~/backup4
+#htoq2
+
+#rsync -Partv ~/vms $EXTBASE
+#rsync -Partv ~/Parallels $EXTBASE
+#rsync -Partv ~/lightroom $EXTBASE
+#rsync -Partv ~/Downloads $EXTBASE
+#rsync -Partv ~/Desktop $EXTBASE
+#rsync -Partv --exclude Library/ --exclude "Hewlett Packard Enterprise/" --exclude "OneDrive - Hewlett Packard Enterprise" ~/Documents $EXTBASE
+
+#rsync -Partv backup1/Parallels backup2
+#rsync -Partv backup1/Parallels backup3
+#rsync -Partv backup1/Parallels backup4

@@ -9,4 +9,6 @@ rsync -Partv ~/lightroom ~/backup1
 rsync -Partv ~/lightroom ~/backup2
 rsync -Partv ~/lightroom ~/backup3
 rsync -Partv ~/lightroom ~/backup5
+rsync -Partv ~/lightroom ~/backup6
 rsync -Partv /Volumes/8TBA/original-images /Volumes/8TBB
+rsync -Partv /Volumes/16TBA/original-images /Volumes/8TBC
