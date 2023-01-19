@@ -1,0 +1,18 @@
+#!/bin/bash
+set -e
+if pgrep  "VMware Fusion" >/dev/null
+then
+   echo "Cannot continue since VMware Fusion is running."
+   exit 1
+fi
+if pgrep "prl_client_app" >/dev/null
+then
+   echo "Cannot continue since Parallels is running."
+   exit 1
+fi
+rsync -Partv ~/vms $EXTBASE
+rsync -Partv ~/Parallels $EXTBASE
+rsync -Partv ~/lightroom $EXTBASE
+rsync -Partv ~/Downloads $EXTBASE
+rsync -Partv ~/Desktop $EXTBASE
+rsync -Partv --exclude Library/ --exclude "Hewlett Packard Enterprise/" --exclude "OneDrive - Hewlett Packard Enterprise" ~/Documents $EXTBASE
