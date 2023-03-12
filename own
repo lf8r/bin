@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+if [ -z "$1" ] 
+then
+    echo "Missing file argument"
+    exit 1
+fi
+sudo chown $USER:$USER $1
+chmod a+w $1
