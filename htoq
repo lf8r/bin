@@ -12,10 +12,10 @@ then
 fi
 export EXTBASE=~/backup1
 htoq2
-export EXTBASE=~/backup2
-htoq2
-export EXTBASE=~/backup3
-htoq2
+#export EXTBASE=~/backup2
+#htoq2
+#export EXTBASE=~/backup3
+#htoq2
 export EXTBASE=~/backup5
 htoq2
 #export EXTBASE=~/backup4

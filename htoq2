@@ -10,6 +10,7 @@ then
    echo "Cannot continue since Parallels is running."
    exit 1
 fi
+rsync -Partv ~/diagrams $EXTBASE
 rsync -Partv ~/vms $EXTBASE
 rsync -Partv ~/Parallels $EXTBASE
 rsync -Partv ~/lightroom $EXTBASE
