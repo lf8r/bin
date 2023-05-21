@@ -1,2 +1,2 @@
 #!/bin/bash
-ssh -X sdasgupta@sdgvm
+ssh -X sdasgupta@devvm
