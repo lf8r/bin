@@ -1,2 +1,2 @@
 #!/bin/bash
-psql -h localhost -p 6543 -d qctldb -U postgres
+psql -h localhost -p 6543 -d qctldb -U postgres "$@"

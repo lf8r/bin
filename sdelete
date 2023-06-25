@@ -1,5 +1,6 @@
 #!/bin/sh
 set -e
+go clean -cache -modcache -testcache
 sudo vmware-toolbox-cmd disk shrink /
 #rm -rf $HOME/.lemminx
 #rm -rf $HOME/.cache/go-build
