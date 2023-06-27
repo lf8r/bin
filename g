@@ -1,1 +1,2 @@
-/home/sdasgupta/scripts/go.sh
+#!/bin/bash
+cd `git rev-parse --show-toplevel`
