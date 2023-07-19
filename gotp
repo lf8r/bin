@@ -1,5 +1,14 @@
 #!/bin/bash
-echo "CPU profiling"
-got -cpuprofile cpu.prof "$@"
-echo "Memory profiling"
-got -memprofile mem.prof "$@" 
+#echo "CPU profiling"
+#got -cpuprofile /tmp/cpu.prof "$@"
+#echo "Memory profiling"
+#got -memprofile /tmp/mem.prof "$@"
+if [ $# -eq 0 ]
+  then
+    echo "gotp -bench=^BenchmarkMultiplyMatricesUsingWorkers50 to run the benchmark BenchmarkMultiplyMatricesUsingWorkers50"
+    exit 1
+fi
+
+go test -cpuprofile=/tmp/cpu.prof -memprofile=/tmp/mem.prof -count=5 "$@"
+go tool pprof -http=:8080 /tmp/cpu.prof
+go tool pprof -http=:8080 /tmp/mem.prof
