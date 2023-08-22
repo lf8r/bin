@@ -1,9 +1,6 @@
 #!/bin/bash
 set -e
 
-# Install helm
-cd /tmp && curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && chmod +x get_helm.sh && ./get_helm.sh
-
 export URL=""
 ARCH=`uname -m`
 
@@ -34,3 +31,12 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 # Setup bash completion.
 kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
+
+# Install k3s
+curl -sfL https://get.k3s.io | sh -
+sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config && chown ${USER} ~/.kube/config && chmod 600 ~/.kube/config && export KUBECONFIG=~/.kube/config
+
+
+# Install helm
+cd /tmp && curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && chmod +x get_helm.sh && ./get_helm.sh
+
