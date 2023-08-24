@@ -7,5 +7,5 @@ then
     exit 1
 fi
 
-./setup-ovftools.sh
+setup-ovftools.sh
 ovftool --name=${VMNAME} ~/vms/template.ova ~/vms/.
