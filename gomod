@@ -1,7 +1,8 @@
 #!/bin/bash
-unset GO111MODULE
-unset GOFLAGS
-unset GOPATH
-go env -w GO111MODULE=on
-go env -w GOFLAGS=-mod=mod
-export PATH=~/go/bin:$PATH
+export GOFLAGS=-mod=mod
+#unset GO111MODULE
+#unset GOFLAGS
+#unset GOPATH
+#go env -w GO111MODULE=on
+#go env -w GOFLAGS=-mod=mod
+#export PATH=~/go/bin:$PATH
