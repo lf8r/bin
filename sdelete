@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 go clean -cache -modcache -testcache
-sudo vmware-toolbox-cmd disk shrink /
+#sudo vmware-toolbox-cmd disk shrink /
+docker-save-images && dcp && dsp && docker-load-images
 #rm -rf $HOME/.lemminx
 #rm -rf $HOME/.cache/go-build
 #docker system prune --all --force
