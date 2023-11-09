@@ -1,0 +1,2 @@
+#!/bin/bash
+docker-save-images && dcp && dsp && docker-load-images
