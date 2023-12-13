@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 go clean -cache -modcache -testcache
+sudo journalctl --rotate
+sudo journalctl --vacuum-time=2days
 #sudo vmware-toolbox-cmd disk shrink /
 docker-save-images && dcp && dsp && docker-load-images
 #rm -rf $HOME/.lemminx
