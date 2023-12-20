@@ -17,3 +17,6 @@ rsync -Partv ~/lightroom /Volumes/16TBA
 rsync -Partv ~/lightroom /Volumes/16TBB
 rsync -Partv ~/lightroom /Volumes/4TBA
 rsync -Partv ~/lightroom /Volumes/4TBB
+rsync -Partv /Volumes/4TBB/original-images /Volumes/16TBB
+rsync -Partv /Volumes/4TBB/original-images /Volumes/16TBA
+rsync -Partv /Volumes/4TBB/original-images /Volumes/4TBA

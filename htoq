@@ -16,6 +16,10 @@ export EXTBASE=~/backup4
 htoq2
 export EXTBASE=~/backup6
 htoq2
+export EXTBASE=~/backup7
+htoq2
+export EXTBASE=~/backup8
+htoq2
 
 
 #rsync -Partv backup1/Parallels backup2

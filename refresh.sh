@@ -7,3 +7,4 @@ ll ~/backup3/*
 ll ~/backup4/*
 ll ~/backup5/*
 ll ~/backup6/*
+ll ~/backup7/*
