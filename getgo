@@ -1,0 +1,31 @@
+#!/bin/bash
+set -e
+
+ARCH=$(dpkg --print-architecture)
+OS="linux"
+
+cd /tmp
+
+VER=1.21.6
+PACKAGE=go${VER}.${OS}-${ARCH}.tar.gz
+wget "https://go.dev/dl/${PACKAGE}"
+
+sudo mkdir -p /opt/go/${VER}
+sudo tar -C /opt/go/${VER} -zxvf ${PACKAGE}
+
+cat > ~/bin/go${VER} << EOF
+sudo rm -f /usr/local/go && sudo ln -s /opt/go/${VER}/go /usr/local/go
+EOF
+chmod +x ~/bin/go${VER}
+
+VER=1.19.13
+PACKAGE=go${VER}.${OS}-${ARCH}.tar.gz
+wget "https://go.dev/dl/${PACKAGE}"
+
+sudo mkdir -p /opt/go/${VER}
+sudo tar -C /opt/go/${VER} -zxvf ${PACKAGE}
+
+cat > ~/bin/go${VER} << EOF
+sudo rm -f /usr/local/go && sudo ln -s /opt/go/${VER}/go /usr/local/go
+EOF
+chmod +x ~/bin/go${VER}
