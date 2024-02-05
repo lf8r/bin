@@ -14,7 +14,7 @@ sudo mkdir -p /opt/go/${VER}
 sudo tar -C /opt/go/${VER} -zxvf ${PACKAGE}
 
 cat > ~/bin/go${VER} << EOF
-sudo rm -f /usr/local/go && sudo ln -s /opt/go/${VER}/go /usr/local/go
+sudo rm -rf /usr/local/go && sudo ln -s /opt/go/${VER}/go /usr/local/go
 EOF
 chmod +x ~/bin/go${VER}
 
@@ -26,6 +26,6 @@ sudo mkdir -p /opt/go/${VER}
 sudo tar -C /opt/go/${VER} -zxvf ${PACKAGE}
 
 cat > ~/bin/go${VER} << EOF
-sudo rm -f /usr/local/go && sudo ln -s /opt/go/${VER}/go /usr/local/go
+sudo rm -rf /usr/local/go && sudo ln -s /opt/go/${VER}/go /usr/local/go
 EOF
 chmod +x ~/bin/go${VER}

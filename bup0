@@ -12,9 +12,6 @@ fi
 #rsync -Partv ~/lightroom ~/backup6
 #rsync -Partv /Volumes/16TBA/original-images /Volumes/8TBC
 
-rsync -Part ~/lightroom /Volumes/NVME03
-rsync -Part ~/lightroom /Volumes/NVME02
-rsync -Part ~/lightroom /Volumes/4TBA
-rsync -Part ~/lightroom /Volumes/4TBB
-rsync -Part /Volumes/4TBB/original-images /Volumes/4TBA
+rsync -Part ~/lightroom ~/localB
+rsync -Part ~/lightroom ~/localC 
 rsync -Part /Volumes/4TBB/original-images /Volumes/4TBC

@@ -1,0 +1,9 @@
+#!/bin/bash
+if pgrep  "prl_client_app" >/dev/null
+then
+   echo "Cannot continue since Parallels is running."
+   exit 1
+fi
+
+rsync -Part ~/Parallels ~/fastA
+rsync -Part ~/Parallels ~/fastB

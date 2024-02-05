@@ -12,11 +12,12 @@ fi
 #rsync -Partv ~/lightroom ~/backup6
 #rsync -Partv /Volumes/16TBA/original-images /Volumes/8TBC
 
-rsync -Partv ~/lightroom /Volumes/NVME03
-rsync -Partv ~/lightroom /Volumes/16TBA
-rsync -Partv ~/lightroom /Volumes/16TBB
-rsync -Partv ~/lightroom /Volumes/4TBA
-rsync -Partv ~/lightroom /Volumes/4TBB
+rsync -Part ~/lightroom ~/localA
+rsync -Part ~/lightroom ~/localB
+rsync -Part ~/lightroom ~/localC
+rsync -Part ~/lightroom ~/remoteA
+rsync -Part ~/lightroom ~/remoteB
 rsync -Partv /Volumes/4TBB/original-images /Volumes/16TBB
 rsync -Partv /Volumes/4TBB/original-images /Volumes/16TBA
 rsync -Partv /Volumes/4TBB/original-images /Volumes/4TBA
+rsync -Partv /Volumes/4TBB/original-images /Volumes/4TBC

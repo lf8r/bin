@@ -10,15 +10,13 @@ then
    echo "Cannot continue since Parallels is running."
    exit 1
 fi
-export EXTBASE=~/backup1
+export EXTBASE=~/localB
 htoq2
-export EXTBASE=~/backup4
+export EXTBASE=~/localC
 htoq2
-export EXTBASE=~/backup6
+export EXTBASE=~/remoteB
 htoq2
-export EXTBASE=~/backup7
-htoq2
-export EXTBASE=~/backup8
+export EXTBASE=~/remoteA
 htoq2
 
 
