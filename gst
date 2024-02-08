@@ -1,1 +1,2 @@
-/home/sdasgupta/scripts/gs.sh
+#!/bin/bash
+git status
