@@ -7,3 +7,7 @@ fi
 
 rsync -Part ~/Parallels ~/fastA
 rsync -Part ~/Parallels ~/fastB
+rsync -Part ~/Parallels ~/slowC
+rsync -Part ~/Parallels ~/localA
+rsync -Part ~/Parallels ~/localB
+rsync -Part ~/Parallels ~/localC
