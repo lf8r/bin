@@ -1,0 +1,2 @@
+#!/bin/bash
+sshfs sdasgupta@192.168.86.150:/Volumes/8TBA/data/genai/documents /var/tmp/documents -C
