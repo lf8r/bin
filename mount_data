@@ -1,2 +1,3 @@
 #!/bin/bash
 sshfs sdasgupta@192.168.86.150:/Volumes/8TBA/data/genai/documents /var/tmp/documents -C
+sshfs sdasgupta@192.168.86.150:/Volumes/8TBA/data/bigdata/mediahuis/report-data /var/tmp/report-data -C
