@@ -1,0 +1,18 @@
+# This is Git's per-user configuration file.
+[user]
+	email = subhajit.dasgupta@hpe.com
+	name = lf8r
+
+[core]
+  editor = code --wait
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
