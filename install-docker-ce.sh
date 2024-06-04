@@ -22,8 +22,10 @@ for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker c
 sudo apt autoremove -y
 sudo apt autoclean -y
 sudo apt install -y docker-ce
+set +e
 sudo groupadd docker
 sudo usermod -aG docker $USER
+set -e
 echo "====="
 echo "Please logout and log back in again to inherit changes to user's groups.
 echo "====="
