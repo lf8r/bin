@@ -1,2 +1,2 @@
 #!/bin/bash
-go test -bench=. -run=^Benchmark -benchmem -count=10
+go test ./... -bench=. -run=^Benchmark -benchmem -count=10
