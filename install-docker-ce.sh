@@ -25,6 +25,7 @@ sudo apt install -y docker-ce
 set +e
 sudo groupadd docker
 sudo usermod -aG docker $USER
+newgrp docker
 set -e
 echo "====="
 echo "Please logout and log back in again to inherit changes to user's groups.
