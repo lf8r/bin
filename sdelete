@@ -5,12 +5,6 @@ sudo journalctl --rotate
 sudo journalctl --vacuum-time=2days
 rm -rf ~/.kube/cache/http/*
 rm -rf ~/.kube/cache/discovery/*
-#sudo vmware-toolbox-cmd disk shrink /
 docker-save-images && dcp && dsp && docker-load-images
-#rm -rf $HOME/.lemminx
-#rm -rf $HOME/.cache/go-build
-#docker system prune --all --force
-#sudo journalctl --vacuum-time=10d
-#dd if=/dev/zero of=zerofillfile bs=1M
-#rm zerofillfile
+pip3 cache purge
 
