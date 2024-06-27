@@ -5,6 +5,6 @@ sudo journalctl --rotate
 sudo journalctl --vacuum-time=2days
 rm -rf ~/.kube/cache/http/*
 rm -rf ~/.kube/cache/discovery/*
-docker-save-images && dcp && dsp && docker-load-images
+#docker-save-images && dcp && dsp && docker-load-images
 pip3 cache purge
 
