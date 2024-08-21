@@ -1,2 +1,3 @@
 #!/bin/bash
 cd ~/dev/github.com/hpe-hcss
+export GOFLAGS=-mod=mod
