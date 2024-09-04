@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+if [ $# -eq 0 ];
+    then ls -1 ~/go/bin/go1*
+    exit 0
+fi
+
+if [ $# -eq 1 ];
+    then go install golang.org/dl/go${1}@latest && go${1} download
+    exit 0
+fi
