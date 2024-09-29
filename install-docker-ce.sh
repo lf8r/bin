@@ -15,10 +15,14 @@ echo \
 sudo apt-get update
 
 # Cleanly reinstall docker-ce.
+set +e
 sudo apt-get purge -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
+set -e
 sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd
+set +e
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+set -e
 sudo apt autoremove -y
 sudo apt autoclean -y
 sudo apt install -y docker-ce
