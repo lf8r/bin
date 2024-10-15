@@ -1,5 +1,3 @@
 #!/bin/bash
 set -e
-make clean
-make generate
-make test
+make distclean && make generate && make test

@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+if [ -z "$1" ]; then
+    echo "Error: No argument provided (first argument must be port)."
+    exit 1
+fi
+
+PORT="$1"
+
+sudo python3 -m http.server "$PORT"
