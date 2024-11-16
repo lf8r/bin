@@ -12,12 +12,8 @@ fi
 #rsync -Partv ~/lightroom ~/backup6
 #rsync -Partv /Volumes/16TBA/original-images /Volumes/8TBC
 
-rsync -Part ~/lightroom ~/localA
-rsync -Part ~/lightroom ~/localB
-rsync -Part ~/lightroom ~/localC
-rsync -Part ~/lightroom ~/remoteA
-rsync -Part ~/lightroom ~/remoteB
-rsync -Partv /Volumes/4TBB/original-images /Volumes/16TBB
-rsync -Partv /Volumes/4TBB/original-images /Volumes/16TBA
-rsync -Partv /Volumes/4TBB/original-images /Volumes/4TBA
-rsync -Partv /Volumes/4TBB/original-images /Volumes/4TBC
+export SRC=/Volumes/FAST1/lightroom
+rsync -Part $SRC /Volumes/FAST2
+rsync -Part $SRC /Volumes/FAST3
+rsync -Partv /Volumes/FAST1/original-images /Volumes/FAST2
+rsync -Partv /Volumes/FAST1/original-images /Volumes/FAST3

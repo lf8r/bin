@@ -11,14 +11,17 @@ then
    exit 1
 fi
 
+SRC=FAST2
+rsync -Part /Volumes/$SRC/vmware-vms ~/localA
+rsync -Part /Volumes/$SRC/vmware-vms ~/localB
+rsync -Part /Volumes/$SRC/vmware-vms ~/localC
+rsync -Part /Volumes/$SRC/vmware-vms ~/slowC
+
 rsync -Part ~/"Virtual Machines.localized" ~/localA
 rsync -Part ~/"Virtual Machines.localized" ~/localB
 rsync -Part ~/"Virtual Machines.localized" ~/localC
-rsync -Part ~/"Virtual Machines.localized" ~/fastA
-rsync -Part ~/"Virtual Machines.localized" ~/fastB
 rsync -Part ~/"Virtual Machines.localized" ~/slowC
-rsync -Part ~/Parallels ~/fastA
-rsync -Part ~/Parallels ~/fastB
+
 rsync -Part ~/Parallels ~/slowC
 rsync -Part ~/Parallels ~/localA
 rsync -Part ~/Parallels ~/localB
