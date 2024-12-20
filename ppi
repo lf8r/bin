@@ -13,5 +13,5 @@ do
 	LENS=`magick $CURRENTIMAGE -format "%[exif:LensModel]" info:`
 	ISO=`magick $CURRENTIMAGE -format "%[exif:PhotographicSensitivity]" info:`
 	IMAGE_NUMBER=`exiftool $CURRENTIMAGE | grep "Image Number"`
-	magick -border 150x150 -pointsize 60 -font Helvetica -bordercolor "#000000" -fill white -gravity north -annotate +100+12 "S U B H A J I T   D A S G U P T A\nR E F L E C T I O N S" -font Helvetica -pointsize 40 -fill white -gravity south -annotate +100+12 "Camera ${MODEL} | Capture ${CAPTURE_TIME} | Exposure ${EXPOSURE} | Speed ${SPEED} | ISO ${ISO}\n Lens ${LENS}\n${IMAGE_NUMBER}" $f $f;
+	magick mogrify -border 150x150 -pointsize 60 -font Helvetica -bordercolor "#000000" -fill white -gravity north -annotate +100+12 "S U B H A J I T   D A S G U P T A\nR E F L E C T I O N S" -font Helvetica -pointsize 40 -fill white -gravity south -annotate +100+12 "Camera ${MODEL} | Capture ${CAPTURE_TIME} | Exposure ${EXPOSURE} | Speed ${SPEED} | ISO ${ISO}\n Lens ${LENS}\n${IMAGE_NUMBER}" $f;
 done
