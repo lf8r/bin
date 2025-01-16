@@ -11,18 +11,24 @@ then
    exit 1
 fi
 
-SRC=FAST2
-rsync -Part /Volumes/$SRC/vmware-vms ~/localA
-rsync -Part /Volumes/$SRC/vmware-vms ~/localB
-rsync -Part /Volumes/$SRC/vmware-vms ~/localC
-rsync -Part /Volumes/$SRC/vmware-vms ~/slowC
+HOSTNAME=`hostname`
 
-rsync -Part ~/"Virtual Machines.localized" ~/localA
-rsync -Part ~/"Virtual Machines.localized" ~/localB
-rsync -Part ~/"Virtual Machines.localized" ~/localC
-rsync -Part ~/"Virtual Machines.localized" ~/slowC
+export DRIVE=FAST1
+DEST="/Volumes/$DRIVE/$HOSTNAME"
+mkdir -p "$DEST"
+rsync -Partv ~/vmware-vms "$DEST"
 
-rsync -Part ~/Parallels ~/slowC
-rsync -Part ~/Parallels ~/localA
-rsync -Part ~/Parallels ~/localB
-rsync -Part ~/Parallels ~/localC
+export DRIVE=FAST2
+DEST="/Volumes/$DRIVE/$HOSTNAME"
+mkdir -p "$DEST"
+rsync -Partv ~/vmware-vms "$DEST"
+
+export DRIVE=FAST3
+DEST="/Volumes/$DRIVE/$HOSTNAME"
+mkdir -p "$DEST"
+rsync -Partv ~/vmware-vms "$DEST"
+
+export DRIVE=FAST4
+DEST="/Volumes/$DRIVE/$HOSTNAME"
+mkdir -p "$DEST"
+rsync -Partv ~/vmware-vms "$DEST"
