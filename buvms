@@ -13,22 +13,19 @@ fi
 
 HOSTNAME=`hostname`
 
-export DRIVE=FAST1
-DEST="/Volumes/$DRIVE/$HOSTNAME"
-mkdir -p "$DEST"
-rsync -Partv ~/vmware-vms "$DEST"
+if [ "$HOSTNAME" == "m4.lan" ]; then
+   TARGETS="FAST1 FAST3"
+elif [ "$HOSTNAME" == "main.lan" ]; then
+   TARGETS="FAST2 FAST4"
+else
+   echo "Unknown hostname. Exiting."
+   exit 1
+fi
 
-export DRIVE=FAST2
-DEST="/Volumes/$DRIVE/$HOSTNAME"
-mkdir -p "$DEST"
-rsync -Partv ~/vmware-vms "$DEST"
+for TARGET in $TARGETS; do
+   echo "Backing up to $TARGET"
+   DEST="/Volumes/$TARGET/$HOSTNAME"
+   mkdir -p "$DEST"
+   rsync -Partv ~/vmware-vms "$DEST"
+done
 
-export DRIVE=FAST3
-DEST="/Volumes/$DRIVE/$HOSTNAME"
-mkdir -p "$DEST"
-rsync -Partv ~/vmware-vms "$DEST"
-
-export DRIVE=FAST4
-DEST="/Volumes/$DRIVE/$HOSTNAME"
-mkdir -p "$DEST"
-rsync -Partv ~/vmware-vms "$DEST"
