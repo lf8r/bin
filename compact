@@ -6,5 +6,5 @@ then
     exit 1
 fi
 
-"/Applications/VMware Fusion.app/Contents/Library/vmware-vdiskmanager" -r $1 -t 0 copy.vmdk
-mv copy.vmdk $1
+"/Applications/VMware Fusion.app/Contents/Library/vmware-vdiskmanager" -r "$1" -t 0 copy.vmdk
+mv copy.vmdk "$1"
