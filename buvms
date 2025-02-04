@@ -13,19 +13,35 @@ fi
 
 HOSTNAME=`hostname`
 
-if [ "$HOSTNAME" == "m4.lan" ]; then
+if [[ "$HOSTNAME" == m4* ]]; then
    TARGETS="FAST1 FAST3"
-elif [ "$HOSTNAME" == "main.lan" ]; then
+elif [[ "$HOSTNAME" == main* ]]; then
    TARGETS="FAST2 FAST4"
 else
    echo "Unknown hostname. Exiting."
    exit 1
 fi
 
+# Hostname may end with a domain, which can be "local" or "lan" (it can switch
+# between the two). For predictability, we'll use just the first token from
+# HOSTNAME if it contains a period.
+if [[ "$HOSTNAME" == *.* ]]; then
+   export JUST_HOST_NAME="${HOSTNAME%%.*}"
+else
+   export JUST_HOST_NAME="$HOSTNAME"
+fi
+
+echo ${JUST_HOST_NAME}
+
+export SRC="/Volumes/FAST1/vmware-vms"
+if [ ! -d "$SRC" ]; then
+   echo "Source directory $SRC does not exist. Exiting."
+   exit 1
+fi
+
 for TARGET in $TARGETS; do
    echo "Backing up to $TARGET"
-   DEST="/Volumes/$TARGET/$HOSTNAME"
+   DEST="/Volumes/$TARGET/$JUST_HOST_NAME"
    mkdir -p "$DEST"
-   rsync -Partv ~/vmware-vms "$DEST"
+   rsync -Partv $SRC "$DEST"
 done
-
