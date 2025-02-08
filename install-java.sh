@@ -6,3 +6,4 @@ sdk install java 17.0.11-jbr
 sdk use java 17.0.11-jbr
 exec "$BASH"
 which java
+sdk install groovy
