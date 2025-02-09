@@ -15,7 +15,7 @@ HOSTNAME=`hostname`
 
 if [[ "$HOSTNAME" == m4* ]]; then
    TARGETS="FAST1 FAST3"
-elif [[ "$HOSTNAME" == main* ]]; then
+elif [[ "$HOSTNAME" == m1* ]]; then
    TARGETS="FAST2 FAST4"
 else
    echo "Unknown hostname. Exiting."
