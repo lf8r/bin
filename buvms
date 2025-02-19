@@ -15,6 +15,12 @@ HOSTNAME=`hostname`
 
 if [[ "$HOSTNAME" == m4* ]]; then
    TARGETS="FAST1 FAST3"
+   export SRC="/Volumes/FAST1/vmware-vms"
+elif [[ "$HOSTNAME" == m3* ]]; then
+   TARGETS="FAST1 FAST3"   
+elif [[ "$HOSTNAME" == m1* ]]; then
+   TARGETS="4TBC"
+   export SRC="/Volumes/4TBC/vmware-vms"
 else
    echo "Unknown hostname. Exiting."
    exit 1
@@ -31,7 +37,6 @@ fi
 
 echo ${JUST_HOST_NAME}
 
-export SRC="/Volumes/FAST1/vmware-vms"
 if [ ! -d "$SRC" ]; then
    echo "Source directory $SRC does not exist. Exiting."
    exit 1
