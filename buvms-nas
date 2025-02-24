@@ -13,15 +13,6 @@ fi
 
 HOSTNAME=`hostname`
 
-if [[ "$HOSTNAME" == m4* ]]; then
-   TARGETS="sdasgupta"
-elif [[ "$HOSTNAME" == m1* ]]; then
-   TARGETS="sdasgupta"
-else
-   echo "Unknown hostname. Expected hostname to start with m1 or m4, got $HOSTNAME. Exiting."
-   exit 1
-fi
-
 # Hostname may end with a domain, which can be "local" or "lan" (it can switch
 # between the two). For predictability, we'll use just the first token from
 # HOSTNAME if it contains a period.
@@ -33,7 +24,18 @@ fi
 
 echo ${JUST_HOST_NAME}
 
-export SRC="/Volumes/FAST1/$JUST_HOST_NAME/vmware-vms"
+if [[ "$HOSTNAME" == m4* ]]; then
+   TARGETS="sdasgupta"
+   export SRC="/Volumes/FAST1/$JUST_HOST_NAME/vmware-vms"
+elif [[ "$HOSTNAME" == m1* ]]; then
+   TARGETS="sdasgupta"
+   export SRC="/Volumes/4TBC/$JUST_HOST_NAME/vmware-vms"
+else
+   echo "Unknown hostname. Expected hostname to start with m1 or m4, got $HOSTNAME. Exiting."
+   exit 1
+fi
+
+
 if [ ! -d "$SRC" ]; then
    echo "Source directory $SRC does not exist. Exiting."
    exit 1
