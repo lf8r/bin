@@ -25,10 +25,10 @@ fi
 echo ${JUST_HOST_NAME}
 
 if [[ "$HOSTNAME" == m4* ]]; then
-   TARGETS="sdasgupta"
+   TARGETS="public"
    export SRC="/Volumes/FAST1/$JUST_HOST_NAME/vmware-vms"
 elif [[ "$HOSTNAME" == m1* ]]; then
-   TARGETS="sdasgupta"
+   TARGETS="public"
    export SRC="/Volumes/4TBC/$JUST_HOST_NAME/vmware-vms"
 else
    echo "Unknown hostname. Expected hostname to start with m1 or m4, got $HOSTNAME. Exiting."
