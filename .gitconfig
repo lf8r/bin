@@ -15,4 +15,5 @@
   cmd = code --wait $MERGED
 [url "git@github.com:"]
 	insteadOf = https://github.com/
-
+[credential]
+	helper = store --file /home/sdasgupta/.git-credentials
