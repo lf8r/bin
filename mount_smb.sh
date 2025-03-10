@@ -1,6 +1,6 @@
 #!/bin/bash
 # See https://www.dzombak.com/blog/2024/05/Keeping-a-SMB-share-mounted-on-macOS-version-2.html
-set -u
+set -e
 
 do_mount() {
 	if osascript -e 'mount volume "smb://sdasgupta@TNAS/public"'; then
@@ -10,6 +10,7 @@ do_mount() {
 	fi
 }
 MOUNT_DIR="/Volumes/public"
+diskutil unmount "$MOUNT_DIR"
 echo "MOUNT_DIR: $MOUNT_DIR"
 if [ ! -d "$MOUNT_DIR" ]; then
     do_mount
