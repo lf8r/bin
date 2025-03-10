@@ -10,7 +10,9 @@ do_mount() {
 	fi
 }
 MOUNT_DIR="/Volumes/public"
+set +e
 diskutil unmount "$MOUNT_DIR"
+set -e
 echo "MOUNT_DIR: $MOUNT_DIR"
 if [ ! -d "$MOUNT_DIR" ]; then
     do_mount
