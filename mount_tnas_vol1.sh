@@ -2,20 +2,17 @@
 # See https://www.dzombak.com/blog/2024/05/Keeping-a-SMB-share-mounted-on-macOS-version-2.html
 set -e
 
-do_mount() {
-	if osascript -e 'mount volume "smb://sdasgupta@TNAS/public"'; then
-		exit 0
-	else
-		exit 1
-	fi
-}
-MOUNT_DIR="/Volumes/public"
+MOUNT_DIR="/Volumes/vol1"
 set +e
 diskutil unmount "$MOUNT_DIR"
 set -e
 echo "MOUNT_DIR: $MOUNT_DIR"
 if [ ! -d "$MOUNT_DIR" ]; then
-    do_mount
+	if osascript -e 'mount volume "smb://sdasgupta@TNAS/vol1"'; then
+		exit 0
+	else
+		exit 1
+	fi
 fi
 if [ ! -d "$MOUNT_DIR" ]; then
     exit 1
