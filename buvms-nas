@@ -12,7 +12,7 @@ then
    exit 1
 fi
 
-mount_smb.sh
+mount_tnas_all.sh
 HOSTNAME=`hostname`
 
 # Hostname may end with a domain, which can be "local" or "lan" (it can switch
