@@ -1,6 +1,7 @@
 #!/bin/sh
-set -e
+set +e
 go clean -cache -modcache -testcache
+set -e
 sudo journalctl --rotate
 sudo journalctl --vacuum-time=2days
 rm -rf ~/.kube/cache/http/*
