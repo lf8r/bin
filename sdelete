@@ -9,6 +9,6 @@ dcp && dsp
 touch file
 dd if=/dev/zero of=file
 rm file
-#docker-save-images && dcp && dsp && docker-load-images
+set +e
 pip3 cache purge
 
