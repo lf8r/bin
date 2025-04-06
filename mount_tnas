@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo mkdir -p /mnt/tnas && sudo mount -t cifs -o username=sdasgupta //tnas/public /mnt/tnas/
