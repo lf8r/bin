@@ -3,4 +3,5 @@ set -e
 docker system df
 docker builder prune -f
 docker volume prune -f
+docker image prune -f
 docker system df
