@@ -16,11 +16,13 @@ HOSTNAME=`hostname`
 if [[ "$HOSTNAME" == m4* ]]; then
    TARGETS="FAST1 FAST3"
    export SRC="/Volumes/FAST1/vmware-vms"
+   export SRC2="/Volumes/FAST1/parallels"
 elif [[ "$HOSTNAME" == m3* ]]; then
-   TARGETS="FAST1 FAST3"   
+   TARGETS="FAST1 FAST3"
 elif [[ "$HOSTNAME" == m1* ]]; then
    TARGETS="4TBC"
    export SRC="/Users/$USER/vmware-vms"
+   export SRC2="/Users/$USER/vms"
 else
    echo "Unknown hostname. Exiting."
    exit 1
@@ -47,4 +49,11 @@ for TARGET in $TARGETS; do
    DEST="/Volumes/$TARGET/$JUST_HOST_NAME"
    mkdir -p "$DEST"
    rsync -Partv --exclude '.DS_Store' "$SRC" "$DEST"
+done
+
+for TARGET in $TARGETS; do
+   echo "Backing up to $TARGET"
+   DEST="/Volumes/$TARGET/$JUST_HOST_NAME"
+   mkdir -p "$DEST"
+   rsync -Partv --exclude '.DS_Store' "$SRC2" "$DEST"
 done
