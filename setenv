@@ -1,0 +1,5 @@
+#!/bin/bash
+export REGISTRY="localhost:5000"
+export REGISTRY_HOST=localhost
+export SKIP_INIT="True"
+
