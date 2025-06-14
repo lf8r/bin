@@ -1,5 +1,9 @@
 #!/bin/bash
 set -e
+
+sudo apt install -y git-lfs
+git lfs install
+
 REPO=git@github.com:HPE-EMU
 if [ -z "$REPO" ]; then
     echo "Error: REPO environment variable is not set (e.g. REPO=sdasguppta@m4:/Volumes/FAST1/data/repo)"
