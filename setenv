@@ -3,3 +3,5 @@ export REGISTRY="localhost:5000"
 export REGISTRY_HOST=localhost
 export SKIP_INIT=TRUE
 export SKIP_PREFLIGHT_CHECKS=TRUE
+export HOSTIP=$(hostname -I | awk '{print $1}')
+
