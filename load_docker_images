@@ -1,0 +1,36 @@
+#!/bin/bash
+set -e
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <docker-images.tar.gz>"
+    exit 1
+fi
+
+TARFILE="$1"
+
+if [ ! -f "$TARFILE" ]; then
+    echo "File not found: $TARFILE"
+    exit 1
+fi
+
+# Verify the integrity of TARFILE
+echo "Verifying the integrity of $TARFILE..."
+if ! tar tzf "$TARFILE" &>/dev/null; then
+    echo "Invalid or corrupted tar.gz file: $TARFILE"
+    exit 1
+fi
+
+TMPDIR=$(mktemp -d)
+trap 'rm -rf "$TMPDIR"' EXIT
+
+echo "Extracting $TARFILE to $TMPDIR..."
+tar -xzf "$TARFILE" -C "$TMPDIR"
+for tarfile in "$TMPDIR"/*.tar; do
+    echo "Verifying integrity of $tarfile..."
+    if ! tar tf "$tarfile" &>/dev/null; then
+        echo "Corrupted tar file: $tarfile"
+        exit 1
+    fi
+done
+
+echo "Loading Docker images from $TARFILE..."
+find "$TMPDIR" -type f -name '*.tar' -exec docker load -i {} \;
