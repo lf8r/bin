@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+    echo "Usage: $0 <private_key_file>"
+    exit 1
+fi
+KEY_FILE="$1"
+eval "$(ssh-agent -s)"
+ssh-add $KEY_FILE
