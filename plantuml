@@ -1,3 +1,0 @@
-#!/bin/bash
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
-java -jar plantuml.jar "*.txt"
