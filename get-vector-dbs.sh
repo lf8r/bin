@@ -154,6 +154,34 @@ fi
 git checkout main
 git pull origin main
 
+DIR="vme"
+cd "$BASEDIR"
+REP=$REPO/$DIR
+if [ -d "$DIR" ]; then
+    echo "Directory $DIR already exists. cd to it."
+    cd "$DIR"
+else
+    echo "Directory $DIR doesn't exist. Clone $REP to it."
+    git clone "$REP"
+    cd "$DIR"
+fi
+git checkout main
+git pull origin main
+
+DIR="vme-vector-db"
+cd "$BASEDIR"
+REP=$REPO/$DIR
+if [ -d "$DIR" ]; then
+    echo "Directory $DIR already exists. cd to it."
+    cd "$DIR"
+else
+    echo "Directory $DIR doesn't exist. Clone $REP to it."
+    git clone "$REP"
+    cd "$DIR"
+fi
+git checkout main
+git pull origin main
+
 # rm -rf golden && git clone ${REPO}/golden
 # rm -rf golden-vector-db && git clone ${REPO}/golden-vector-db
 # rm -rf dream-docs && git clone ${REPO}/dream-docs
