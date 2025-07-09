@@ -154,7 +154,7 @@ fi
 git checkout main
 git pull origin main
 
-DIR="vme"
+DIR="vme-docs"
 cd "$BASEDIR"
 REP=$REPO/$DIR
 if [ -d "$DIR" ]; then
@@ -168,7 +168,7 @@ fi
 git checkout main
 git pull origin main
 
-DIR="vme-vector-db"
+DIR="vme-docs-vector-db"
 cd "$BASEDIR"
 REP=$REPO/$DIR
 if [ -d "$DIR" ]; then
