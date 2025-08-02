@@ -4,6 +4,9 @@ set -e
 sudo apt install -y git-lfs
 git lfs install
 
+ARCH=$(arch)
+echo $ARCH
+
 REPO=git@github.com:HPE-EMU
 if [ -z "$REPO" ]; then
     echo "Error: REPO environment variable is not set (e.g. REPO=sdasguppta@m4:/Volumes/FAST1/data/repo)"
@@ -36,11 +39,9 @@ if [ -d "$DIR" ]; then
     cd "$DIR"
 else
     echo "Directory $DIR doesn't exist. Clone $REP to it."
-    git clone "$REP"
+    git lfs clone -b ${ARCH} --single-branch $REP
     cd "$DIR"
 fi
-git checkout main
-git pull origin main
 
 DIR="dream-docs"
 cd "$BASEDIR"
@@ -64,11 +65,9 @@ if [ -d "$DIR" ]; then
     cd "$DIR"
 else
     echo "Directory $DIR doesn't exist. Clone $REP to it."
-    git clone "$REP"
+    git lfs clone -b $ARCH --single-branch $REP
     cd "$DIR"
 fi
-git checkout main
-git pull origin main
 
 DIR="morpheus"
 cd "$BASEDIR"
@@ -92,11 +91,9 @@ if [ -d "$DIR" ]; then
     cd "$DIR"
 else
     echo "Directory $DIR doesn't exist. Clone $REP to it."
-    git clone "$REP"
+    git lfs clone -b $ARCH --single-branch $REP
     cd "$DIR"
 fi
-git checkout main
-git pull origin main
 
 DIR="slack-C04TLCJKVGF"
 cd "$BASEDIR"
@@ -120,11 +117,9 @@ if [ -d "$DIR" ]; then
     cd "$DIR"
 else
     echo "Directory $DIR doesn't exist. Clone $REP to it."
-    git clone "$REP"
+    git lfs clone -b $ARCH --single-branch $REP
     cd "$DIR"
 fi
-git checkout main
-git pull origin main
 
 DIR="slack-C082SGG8T6G"
 cd "$BASEDIR"
@@ -148,11 +143,9 @@ if [ -d "$DIR" ]; then
     cd "$DIR"
 else
     echo "Directory $DIR doesn't exist. Clone $REP to it."
-    git clone "$REP"
+    git lfs clone -b $ARCH --single-branch $REP
     cd "$DIR"
 fi
-git checkout main
-git pull origin main
 
 DIR="vme-docs"
 cd "$BASEDIR"
@@ -176,11 +169,9 @@ if [ -d "$DIR" ]; then
     cd "$DIR"
 else
     echo "Directory $DIR doesn't exist. Clone $REP to it."
-    git clone "$REP"
+    git lfs clone -b $ARCH --single-branch $REP
     cd "$DIR"
 fi
-git checkout main
-git pull origin main
 
 # rm -rf golden && git clone ${REPO}/golden
 # rm -rf golden-vector-db && git clone ${REPO}/golden-vector-db
