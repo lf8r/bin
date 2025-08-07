@@ -167,6 +167,33 @@ REP=$REPO/$DIR
 if [ -d "$DIR" ]; then
     echo "Directory $DIR already exists. cd to it."
     cd "$DIR"
+    else
+    echo "Directory $DIR doesn't exist. Clone $REP to it."
+    git lfs clone -b $ARCH --single-branch $REP
+    cd "$DIR"
+fi
+
+DIR="pcbe-docs"
+cd "$BASEDIR"
+REP=$REPO/$DIR
+if [ -d "$DIR" ]; then
+    echo "Directory $DIR already exists. cd to it."
+    cd "$DIR"
+else
+    echo "Directory $DIR doesn't exist. Clone $REP to it."
+    git clone "$REP"
+    cd "$DIR"
+fi
+git checkout main
+git pull origin main
+
+DIR="pcbe-docs-vector-db"
+cd "$BASEDIR"
+REP=$REPO/$DIR
+if [ -d "$DIR" ]; then
+    echo "Directory $DIR already exists. cd to it."
+    cd "$DIR"
+    git checkout $ARCH
 else
     echo "Directory $DIR doesn't exist. Clone $REP to it."
     git lfs clone -b $ARCH --single-branch $REP
