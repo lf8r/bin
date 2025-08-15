@@ -1,4 +1,4 @@
 #!/bin/bash
-cd ~/dev/github.com/gomorpheus
+cd ~/dev/github.com/hpe-emu
 export GOFLAGS=-mod=mod
 export GOROOT=/usr/local/go

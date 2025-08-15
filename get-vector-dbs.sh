@@ -14,7 +14,7 @@ if [ -z "$REPO" ]; then
 fi
 
 # Assume the emu identity. Note: Remember to cleanup the garbage (killall --exact ssh-agent).
-eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa_emu
+#eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa_emu
 BASEDIR=`pwd`
 
 DIR="golden"
@@ -194,6 +194,58 @@ if [ -d "$DIR" ]; then
     echo "Directory $DIR already exists. cd to it."
     cd "$DIR"
     git checkout $ARCH
+else
+    echo "Directory $DIR doesn't exist. Clone $REP to it."
+    git lfs clone -b $ARCH --single-branch $REP
+    cd "$DIR"
+fi
+
+DIR="slack-C0352LRK4JC"
+cd "$BASEDIR"
+REP=$REPO/$DIR
+if [ -d "$DIR" ]; then
+    echo "Directory $DIR already exists. cd to it."
+    cd "$DIR"
+else
+    echo "Directory $DIR doesn't exist. Clone $REP to it."
+    git clone "$REP"
+    cd "$DIR"
+fi
+git checkout main
+git pull origin main
+
+DIR="slack-C0352LRK4JC-vector-db"
+cd "$BASEDIR"
+REP=$REPO/$DIR
+if [ -d "$DIR" ]; then
+    echo "Directory $DIR already exists. cd to it."
+    cd "$DIR"
+else
+    echo "Directory $DIR doesn't exist. Clone $REP to it."
+    git lfs clone -b $ARCH --single-branch $REP
+    cd "$DIR"
+fi
+
+DIR="slack-C9GP8M8DU"
+cd "$BASEDIR"
+REP=$REPO/$DIR
+if [ -d "$DIR" ]; then
+    echo "Directory $DIR already exists. cd to it."
+    cd "$DIR"
+else
+    echo "Directory $DIR doesn't exist. Clone $REP to it."
+    git clone "$REP"
+    cd "$DIR"
+fi
+git checkout main
+git pull origin main
+
+DIR="slack-C9GP8M8DU-vector-db"
+cd "$BASEDIR"
+REP=$REPO/$DIR
+if [ -d "$DIR" ]; then
+    echo "Directory $DIR already exists. cd to it."
+    cd "$DIR"
 else
     echo "Directory $DIR doesn't exist. Clone $REP to it."
     git lfs clone -b $ARCH --single-branch $REP
