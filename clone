@@ -1,9 +1,0 @@
-#!/bin/bash
-git clone git@github.com:hpe-hcss/gl-metal-health-alerting.git
-git clone git@github.com:hpe-hcss/gl-metal-investigations.git
-git clone git@github.com:hpe-hcss/gl-metal-opentelemetry-collector.git
-git clone git@github.com:hpe-hcss/gl-metal-telemetry-faker.git
-git clone git@github.com:hpe-hcss/gl-metal-motc-117-slim-prometheus.git
-git clone git@github.com:hpe-hcss/gl-metal-motc-117-slim-prometheusreceiver.git
-git clone git@github.com:hpe-hcss/gl-metal-motc-119-2023-apr-slim-prometheus.git
-git clone git@github.com:hpe-hcss/gl-metal-motc-119-2023-apr-slim-prometheusreceiver.git
