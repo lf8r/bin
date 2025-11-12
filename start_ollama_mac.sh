@@ -6,5 +6,5 @@ export OLLAMA_NUM_PARALLEL=4
 export OLLAMA_MAX_QUEUE=512
 export OLLAMA_CONTEXT_LENGTH=16384
 pkill ollama || true
-ollama serve
+nohup ollama serve &
 
