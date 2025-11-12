@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+rsync -Partv /Volumes/DATA1/repos /Volumes/DATA2
+rsync -Partv /Volumes/DATA1/repos /Volumes/DATA3
+rsync -Partv /Volumes/DATA1/repos /Volumes/DATA4
+rsync -Partv /Volumes/DATA1/repos /Volumes/FAST1
+rsync -Partv /Volumes/DATA1/repos /Volumes/FAST3
