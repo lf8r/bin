@@ -6,15 +6,18 @@ then
 fi
 
 rsync -Partv ~/lightroom /Volumes/FAST1
-rsync -Partv ~/lightroom /Volumes/FAST2
 rsync -Partv ~/lightroom /Volumes/FAST3
-rsync -Partv ~/lightroom /Volumes/FAST4
+rsync -Partv ~/lightroom /Volumes/DATA1
+rsync -Partv ~/lightroom /Volumes/DATA2
+rsync -Partv ~/lightroom /Volumes/DATA3
+rsync -Partv ~/lightroom /Volumes/DATA4
 
-rsync -Partv /Volumes/FAST1/original-images /Volumes/FAST2
 rsync -Partv /Volumes/FAST1/original-images /Volumes/FAST3
+rsync -Partv /Volumes/FAST1/original-images /Volumes/DATA3
+rsync -Partv /Volumes/FAST1/original-images /Volumes/DATA4
 
-rsync -Partv /Volumes/FAST1/original-images /Volumes/16TBA
-rsync -Partv /Volumes/FAST1/original-images /Volumes/16TBB
+# rsync -Partv /Volumes/FAST1/original-images /Volumes/16TBA
+# rsync -Partv /Volumes/FAST1/original-images /Volumes/16TBB
 
 # export SRC=/Volumes/FAST1/lightroom
 # rsync -Part $SRC /Volumes/FAST2
