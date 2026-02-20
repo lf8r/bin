@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 sudo apt purge code
+# rm -rf ~/.vscode/extensions
 sudo apt update
 sudo apt install wget gpg software-properties-common apt-transport-https -y
 
