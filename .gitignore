@@ -5,3 +5,4 @@ protoc-gen-go*
 go1*
 msgen
 .DS_Store
+**/*/__pycache__
