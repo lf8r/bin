@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+if [[ $# -lt 1 ]]; then
+    echo "Error: container name or id required" >&2
+    echo "Available containers:"
+    echo $(docker ps -a --format "  {{.Names}}")
+    exit 1
+fi
+
+docker exec -it "$1" /bin/bash
