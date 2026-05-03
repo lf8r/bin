@@ -1,11 +1,3 @@
 #!/bin/bash
 set -e
-export OLLAMA_HOST="0.0.0.0"
-export OLLAMA_MAX_LOADED_MODELS=6
-export OLLAMA_NUM_PARALLEL=4
-export OLLAMA_MAX_QUEUE=512
-export OLLAMA_CONTEXT_LENGTH=16384
-# export OLLAMA_MODELS=/Volumes/FAST1/.ollama/models
-pkill ollama || true
-nohup ollama serve &
-
+OLLAMA_MLX=1 OLLAMA_HOST="0.0.0.0" OLLAMA_KEEP_ALIVE=5m OLLAMA_NUM_PARALLEL=4 OLLAMA_DEBUG=BUG=1 OLLAMA_FLASH_ATTENTION="1"  ollama serve 2>&1 | tee -a ~/.ollama/logs/server.log

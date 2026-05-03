@@ -19,7 +19,7 @@ if [[ "$HOSTNAME" == m4* ]]; then
    export SRC2="/Volumes/FAST1/parallels"
 elif [[ "$HOSTNAME" == m3* ]]; then
    export SRC="/Volumes/FAST3/m3"
-   TARGETS="/Volumes/DATA1/backups /Volumes/DATA2/backups /Volumes/DATA3/backups /Volumes/DATA4/backups"
+   TARGETS="/Volumes/DATA1/backups /Volumes/DATA3/backups /Volumes/DATA4/backups"
 else
    echo "Unknown hostname. Exiting."
    exit 1
