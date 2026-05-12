@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set your Wi‑Fi network prefix (first three octets)
-WIFI_PREFIX="192.168.68"
+WIFI_PREFIX="192.168.1"
 
 get_ip_from_interface() {
     local iface="$1"
