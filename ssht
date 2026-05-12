@@ -1,0 +1,14 @@
+#!/bin/bash
+# set -e
+# # ssh -f -N -L 0.0.0.0:11434:172.17.16.53:11434 sdasgupta@192.168.68.57
+# ssh -L 0.0.0.0:11434:192.#!/bin/bash
+set -e
+
+# Configuration variables
+USER=${USER:-sdasgupta}
+JUMP_STATION="${JUMP_STATION:-sdasgupta@192.168.68.57}"
+OLLAMA_PROVIDER="${OLLAMA_PROVIDER:-192.168.68.57}"
+LOCAL_PORT="${OLLAMA_PORT:-11434}"
+
+# SSH tunnel command
+ssh -L 0.0.0.0:${LOCAL_PORT}:${OLLAMA_PROVIDER}:${LOCAL_PORT} ${JUMP_STATION}

@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "Starting claude in a terminal"
+set +e
+ssht
+set -e
+export ANTHROPIC_BASE_URL=http://localhost:11434
+# Use 'ollama' as the auth token to signal local mode
+export ANTHROPIC_AUTH_TOKEN=ollama
+# API Key is not required for local Ollama, set to empty
+export ANTHROPIC_API_KEY=""
+source ~/.bashrc
+claude --model qwen3.5:35b-a3b-coding-nvfp4
