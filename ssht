@@ -5,9 +5,24 @@
 set -e
 
 # Configuration variables
-USER=${USER:-sdasgupta}
-JUMP_STATION="${JUMP_STATION:-sdasgupta@192.168.68.57}"
-OLLAMA_PROVIDER="${OLLAMA_PROVIDER:-192.168.68.57}"
+if [ -z "$USER" ]; then
+    read -p "Please provide the USER: " USER
+fi
+export "USER" $USER
+
+if [ -z "$JUMP_STATION" ]; then
+    read -p "Please provide the JUMP_STATION (the host from which Ollama is accessible): " JUMP_STATION
+fi
+JUMP_STATION="${JUMP_STATION}"
+
+if [ -z "$OLLAMA_PROVIDER" ]; then
+    read -p "Please provide the OLLAMA_PROVIDER (the host where Ollama is running): " OLLAMA_PROVIDER
+fi
+OLLAMA_PROVIDER="${OLLAMA_PROVIDER:-$JUMP_STATION}"
+
+if [ -z "$OLLAMA_PORT" ]; then
+    read -p "Please provide the LOCAL_PORT (default 11434): " OLLAMA_PORT
+fi
 LOCAL_PORT="${OLLAMA_PORT:-11434}"
 
 # SSH tunnel command
