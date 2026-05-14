@@ -5,7 +5,7 @@ sudo apt install -y npm
 sudo npm install -g @openai/codex
 
 mkdir -p ~/.codex
-cat >> ~/codex/config.toml << 'EOF'
+cat >> ~/.codex/config.toml << 'EOF'
 [model_providers.ollama-custom]
 name = "Ollama"
 base_url = "http://localhost:11434/v1"
