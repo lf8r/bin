@@ -1,0 +1,29 @@
+[model_providers.ollama-custom]
+name = "Ollama"
+base_url = "http://localhost:11434/v1"
+api_key = "ollama"
+
+[profiles.dev]
+model_provider = "ollama-custom"
+model = "qwen3.6:27b-coding-mxfp8" # Or qwen2.5-coder:1.5b
+
+[profiles.devgemma4]
+model_provider = "ollama-custom"
+model = "gemma4:31b" # Or qwen2.5-coder:1.5b
+
+[profiles.dev2]
+model_provider = "ollama-custom"
+model = "qwen3-coder:30b"
+
+[profiles.dev3]
+model_provider = "ollama-custom"
+model = "gemma4:31b-coding-mtp-bf16"
+
+[projects."/home/sdasgupta/dev/github.com/hpe-emu/genaix-agents"]
+trust_level = "trusted"
+
+[projects."/home/sdasgupta/dev/github.com/hpe-emu/genaix_core"]
+trust_level = "trusted"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4

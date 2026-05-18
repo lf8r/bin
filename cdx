@@ -1,2 +1,2 @@
 #!/bin/bash
-codex --profile dev --yolo
+codex --profile dev3 --yolo
