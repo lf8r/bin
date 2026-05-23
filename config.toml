@@ -19,11 +19,51 @@ model = "qwen3-coder:30b"
 model_provider = "ollama-custom"
 model = "gemma4:31b-coding-mtp-bf16"
 
+[profiles.gemma]
+model_provider = "ollama-custom"
+model = "gemma4:31b-coding-mtp-bf16"
+
+[profiles.qwen]
+model_provider = "ollama-custom"
+model = "qwen3.6:27b-coding-mxfp8"
+
+[profiles.dev3.features]
+terminal_resize_reflow = true
+memories = false
+network_proxy = false
+external_migration = false
+mentions_v2 = false
+goals = false
+prevent_idle_sleep = false
+
 [projects."/home/sdasgupta/dev/github.com/hpe-emu/genaix-agents"]
 trust_level = "trusted"
 
 [projects."/home/sdasgupta/dev/github.com/hpe-emu/genaix_core"]
 trust_level = "trusted"
 
+[projects."/home/sdasgupta/dev/github.com/local/genaix-agents"]
+trust_level = "trusted"
+
 [tui.model_availability_nux]
 "gpt-5.5" = 4
+
+# hero:managed
+[mcp_servers.hero]
+command = "/usr/local/bin/hero"
+args = ["mcp"]
+
+[hooks.state]
+
+[hooks.state."/home/sdasgupta/.codex/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:73d8bf675f43714e40f43c127e50776f06c677f8c98994bf3e5b0cc762f9b2e9"
+
+[hooks.state."/home/sdasgupta/.codex/hooks.json:stop:0:0"]
+trusted_hash = "sha256:4ccc4db04c0c44728a0a6d023fde567726b0b39a4cf9532ba7d75d3ce53b09a6"
+
+[hooks.state."/home/sdasgupta/dev/github.com/local/genaix-agents/.codex/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:73d8bf675f43714e40f43c127e50776f06c677f8c98994bf3e5b0cc762f9b2e9"
+
+[hooks.state."/home/sdasgupta/dev/github.com/local/genaix-agents/.codex/hooks.json:stop:0:0"]
+trusted_hash = "sha256:4ccc4db04c0c44728a0a6d023fde567726b0b39a4cf9532ba7d75d3ce53b09a6"
+# end:hero:managed
