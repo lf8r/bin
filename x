@@ -1,1 +1,3 @@
-/home/sdasgupta/scripts/initx.sh
+#!/bin/bash
+set -e
+codex --profile qwen --yolo
