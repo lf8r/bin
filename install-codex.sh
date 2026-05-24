@@ -7,3 +7,5 @@ sudo npm install -g @openai/codex
 mkdir -p ~/.codex
 touch ~/.codex/config.toml
 cp ~/bin/config.toml ~/.codex/config.toml
+cd ~
+npx skills@latest add mattpocock/skills
