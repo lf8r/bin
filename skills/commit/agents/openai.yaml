@@ -1,0 +1,4 @@
+interface:
+  display_name: "commit-message"
+  short_description: "Generate commit messages from uncommitted changes"
+  default_prompt: "Generate a comprehensive commit message for my uncommitted changes. Do not commit anything, just generate the message."
