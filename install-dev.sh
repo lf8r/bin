@@ -9,3 +9,5 @@ install-python3.sh
 install-firefox.sh
 install-docker-ce.sh
 install-codex.sh
+install-claude.sh
+install-gh.sh
