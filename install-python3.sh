@@ -7,8 +7,8 @@ sudo apt install python3.11
 sudo apt install python3.11-venv
 sudo apt-get install python3.11-tk
 
-# Black formatter for Python code.
-pip install black
+# Ruff formatter for Python code.
+sudo snap install ruff --classic
 # Required for web browser automation with playwright (see https://playwright.dev/python/docs/intro).
 sudo apt-get install libavif16
 curl -sS https://bootstrap.pypa.io/get-pip.py | python3.11

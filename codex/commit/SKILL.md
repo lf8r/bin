@@ -1,11 +1,11 @@
 ---
-name: commit-message
-description: Generate a comprehensive commit message for uncommitted changes. Use when the user asks to write, draft, or generate a commit message, or when they want to summarize staged or unstaged changes into a commit message without actually committing.
+name: commit
+description: Commit uncommitted changes with a comprehensive commit message for uncommitted changes. Use when the user asks to commit changes.
 ---
 
-# Commit Message
+# Commit all uncommitted changes
 
-Generate a comprehensive commit message for uncommitted changes. Do not commit anything, just generate the message.
+Commmit uncommitted changes (including unstaged ones) with a comprehensive commit message that describes the changes in detail. The commit message should follow the Conventional Commits format, providing a clear and structured summary of the changes made. This helps maintain a clean and informative commit history, making it easier for other developers to understand the context and purpose of each commit.
 
 ## Workflow
 
@@ -30,7 +30,7 @@ Generate a comprehensive commit message for uncommitted changes. Do not commit a
    - **Body**: Detailed explanation of what changed and why (optional)
    - **Footer**: Breaking changes, issue references (optional)
 
-4. Output only the commit message. Do not run `git commit` or suggest the user to do so unless they ask.
+4. Output the commit message, stage all uncommitted changes, inform the user is ready to commit, and ask for confirmation to proceed with the commit. If the user decides not to commit, keep the changes staged and provide instructions on how to commit manually.
 
 ## Tips
 

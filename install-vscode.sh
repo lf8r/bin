@@ -11,4 +11,5 @@ echo "deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/microsoft.gpg] https:/
 #echo "deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
 sudo apt update
 sudo apt install -y code code-insiders
-
+cp Working2026.code-profile ~/.
+echo "Choose ~/Working2026.code-profile as your profile in VS Code to get the recommended extensions and settings for working on the project."
