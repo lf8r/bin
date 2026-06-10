@@ -5,7 +5,7 @@ description: Commit uncommitted changes with a comprehensive commit message for 
 
 # Commit all uncommitted changes
 
-Commmit uncommitted changes (including unstaged ones) with a comprehensive commit message that describes the changes in detail. The commit message should follow the Conventional Commits format, providing a clear and structured summary of the changes made. This helps maintain a clean and informative commit history, making it easier for other developers to understand the context and purpose of each commit.
+Ignore untracked files and directories. Stage all tracked unstaged changes and commmit these with a comprehensive commit message that describes the changes in detail. DO NOT add untracked files and directories. The commit message should follow the Conventional Commits format, providing a clear and structured summary of the changes made. This helps maintain a clean and informative commit history, making it easier for other developers to understand the context and purpose of each commit.
 
 ## Workflow
 
