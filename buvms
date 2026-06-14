@@ -14,9 +14,8 @@ fi
 HOSTNAME=`hostname`
 
 if [[ "$HOSTNAME" == m4* ]]; then
-   TARGETS="FAST1 FAST3"
-   export SRC="/Volumes/FAST1/vmware-vms"
-   export SRC2="/Volumes/FAST1/parallels"
+   TARGETS="/Volumes/8TBA/data/backups"
+   export SRC="/Volumes/FAST1/m4"
 elif [[ "$HOSTNAME" == m3* ]]; then
    export SRC="/Volumes/FAST3/m3"
 #  TARGETS="/Volumes/DATA1/backups /Volumes/DATA3/backups /Volumes/DATA4/backups"

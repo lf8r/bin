@@ -1,5 +1,5 @@
 #!/bin/bash
 set -e
 
-killall ollama
+pkill -f "ollama"
 rm ~/.ollama/pid
