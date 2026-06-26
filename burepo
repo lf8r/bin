@@ -1,0 +1,3 @@
+ #!/bin/bash
+ set -e
+ rsync -Partv /Volumes/8TBA/data/githublocal /Volumes/8TBB/data

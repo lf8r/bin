@@ -1,0 +1,11 @@
+NAME
+gemma4:31b
+nomic-embed-text:latest
+qwen3.5:35b-a3b-coding-nvfp4
+qwen3-coder:30b
+gemma4:26b
+qwen3.6:27b-coding-mxfp8
+gemma4:31b-coding-mtp-bf16
+qwen3-coder-next:latest
+gemma4:31b-mlx
+gemma4:26b-mlx
