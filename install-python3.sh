@@ -6,6 +6,7 @@ sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt install python3.11
 sudo apt install python3.11-venv
 sudo apt-get install python3.11-tk
+sudo apt-get install python3.11-dev
 
 # Ruff formatter for Python code.
 sudo snap install ruff --classic
