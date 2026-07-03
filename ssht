@@ -1,29 +1,31 @@
 #!/bin/bash
 # set -e
-# # ssh -f -N -L 0.0.0.0:11434:172.17.16.53:11434 sdasgupta@192.168.68.57
-# ssh -L 0.0.0.0:11434:192.#!/bin/bash
-set -e
 
-# Configuration variables
-if [ -z "$USER" ]; then
-    read -p "Please provide the USER: " USER
-fi
-export "USER" $USER
-
-if [ -z "$JUMP_STATION" ]; then
+# Parse command line arguments
+if [ $# -gt 0 ]; then
+    JUMP_STATION="$1"
+else
     read -p "Please provide the JUMP_STATION (the host from which Ollama is accessible): " JUMP_STATION
 fi
-JUMP_STATION="${JUMP_STATION}"
 
-if [ -z "$OLLAMA_PROVIDER" ]; then
-    read -p "Please provide the OLLAMA_PROVIDER (the host where Ollama is running): " OLLAMA_PROVIDER
+if [ $# -gt 1 ]; then
+    OLLAMA_PROVIDER="$2"
+else
+    OLLAMA_PROVIDER="localhost"
 fi
-OLLAMA_PROVIDER="${OLLAMA_PROVIDER:-$JUMP_STATION}"
 
-if [ -z "$OLLAMA_PORT" ]; then
-    read -p "Please provide the LOCAL_PORT (default 11434): " OLLAMA_PORT
+if [ $# -gt 2 ]; then
+    LOCAL_PORT="$3"
+else
+    LOCAL_PORT="11434"
 fi
-LOCAL_PORT="${OLLAMA_PORT:-11434}"
+
+# Set USER from hostname if not set
+if [ -z "$USER" ]; then
+    USER=$(whoami)
+fi
+export USER
 
 # SSH tunnel command
-ssh -L 0.0.0.0:${LOCAL_PORT}:${OLLAMA_PROVIDER}:${LOCAL_PORT} ${JUMP_STATION}
+ssh -f -N -q -L 0.0.0.0:${LOCAL_PORT}:${OLLAMA_PROVIDER}:${LOCAL_PORT} ${JUMP_STATION}
+curl --silent --show-error --fail http://localhost:${LOCAL_PORT}
