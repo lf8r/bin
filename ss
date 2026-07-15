@@ -11,4 +11,4 @@ fi
 
 # Change to the git repository base directory.
 cd "$(git rev-parse --show-toplevel)"
-git diff > /var/tmp/changes.diff
+git diff HEAD > /var/tmp/changes.diff
