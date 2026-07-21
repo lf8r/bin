@@ -26,6 +26,8 @@ if [ -z "$USER" ]; then
 fi
 export USER
 
+# Kill any other tunnels processes that are using the same local por
+pkill -f "ssh -f -N -q -L 0.0.0.0:11434:localhost:11434"
 # SSH tunnel command
 ssh -f -N -q -L 0.0.0.0:${LOCAL_PORT}:${OLLAMA_PROVIDER}:${LOCAL_PORT} ${JUMP_STATION}
 curl --silent --show-error --fail http://localhost:${LOCAL_PORT}
