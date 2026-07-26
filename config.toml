@@ -2,6 +2,8 @@
 name = "Ollama"
 base_url = "http://localhost:11434/v1"
 api_key = "ollama"
+stream_idle_timeout_ms = 1800000
+stream_max_retries = 5
 
 [profiles.dev]
 model_provider = "ollama-custom"
