@@ -1,65 +1,20 @@
+# Set the default local provider
+oss_provider = "ollama-custom"
+
 [model_providers.ollama-custom]
-name = "Ollama"
+name = "Ollama Local"
 base_url = "http://localhost:11434/v1"
-api_key = "ollama"
-stream_idle_timeout_ms = 1800000
-stream_max_retries = 5
+wire_api = "responses"
 
-[profiles.dev]
+[profiles.local]
 model_provider = "ollama-custom"
-model = "qwen3.6:27b-coding-mxfp8" # Or qwen2.5-coder:1.5b
+model = "qwen3.5:35b-a3b-coding-nvfp4"   # Replace with your pulled Ollama model name
 
-[profiles.devgemma4]
-model_provider = "ollama-custom"
-model = "gemma4:31b" # Or qwen2.5-coder:1.5b
-
-[profiles.dev2]
-model_provider = "ollama-custom"
-model = "qwen3-coder:30b"
-
-[profiles.dev3]
-model_provider = "ollama-custom"
-model = "gemma4:31b-coding-mtp-bf16"
-
-[profiles.gemma]
-model_provider = "ollama-custom"
-model = "gemma4:31b-coding-mtp-bf16"
-
-[profiles.qwen]
-model_provider = "ollama-custom"
-model = "qwen3.6:27b-coding-mxfp8"
-
-[profiles.dev3.features]
-terminal_resize_reflow = true
-memories = false
-network_proxy = false
-external_migration = false
-mentions_v2 = false
-goals = false
-prevent_idle_sleep = false
-
-[projects."/home/sdasgupta/dev/github.com/hpe-emu/genaix-agents"]
+[projects."/home/sdasgupta"]
 trust_level = "trusted"
 
-[projects."/home/sdasgupta/dev/github.com/hpe-emu/genaix_core"]
-trust_level = "trusted"
-
-[projects."/home/sdasgupta/dev/github.com/local/genaix-agents"]
+[projects."/home/sdasgupta/dev/github.com/lf8r/genaix-agents"]
 trust_level = "trusted"
 
 [tui.model_availability_nux]
-"gpt-5.5" = 4
-
-args = ["mcp"]
-
-[hooks.state]
-
-[hooks.state."/home/sdasgupta/.codex/hooks.json:session_start:0:0"]
-trusted_hash = "sha256:73d8bf675f43714e40f43c127e50776f06c677f8c98994bf3e5b0cc762f9b2e9"
-
-[hooks.state."/home/sdasgupta/.codex/hooks.json:stop:0:0"]
-trusted_hash = "sha256:4ccc4db04c0c44728a0a6d023fde567726b0b39a4cf9532ba7d75d3ce53b09a6"
-
-[hooks.state."/home/sdasgupta/dev/github.com/local/genaix-agents/.codex/hooks.json:session_start:0:0"]
-trusted_hash = "sha256:73d8bf675f43714e40f43c127e50776f06c677f8c98994bf3e5b0cc762f9b2e9"
-
+"gpt-5.5" = 2
