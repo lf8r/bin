@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+# codex --profile qwen --yolo
+codex --oss -m gpt-oss:120b --yolo
