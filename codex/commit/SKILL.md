@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Commits all changes, including unstaged ones. Analyzes all modifications, generates a descriptive commit message for all changes, shows it for approval, and commits only if approved. Does not push.
+description: Generates a descriptive commit message for all tracked files including unstaged ones. Analyzes all modifications for comprehensiveness. Shows it for approval, and commits only if approved. Does not push.
 tools:
    - git
 ---
