@@ -1,0 +1,3 @@
+#!/bin/bash
+set -euo pipefail
+curl http://localhost:11434/api/generate -d '{"model": "gemma4:26b-mlx", "keep_alive": 0}'
