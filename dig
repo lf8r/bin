@@ -1,0 +1,31 @@
+#!/bin/bash
+set -e
+
+GREEN='\033[1;32m'
+RESET='\033[0m'
+
+if [ "$#" -lt 1 ]; then
+	echo "Usage: $0 IMG_BASE" >&2
+	exit 1
+fi
+
+export IMG_BASE=$1
+export IMG="docker.io/${IMG_BASE}"
+
+# Get the digest from local image (just the sha256:... part)
+export DIG=$(docker image inspect "$IMG" 2>/dev/null | jq -r '.[].RepoDigests[0]' | awk -F@ '{print $2}')
+if [ -z "$DIG" ]; then
+	echo "Image not found locally, try: docker pull $IMG" >&2
+	exit 1
+fi
+echo "Digest: ${DIG}"
+
+# Query Hub API
+results=$(curl -s "https://hub.docker.com/v2/repositories/${IMG_BASE}/tags/" -H 'Content-Type: application/json' | jq -r --arg digest "$DIG" '.results[] | select(.digest == $digest) | .name')
+
+# Print all results, then the last one in green
+if [ -n "$results" ]; then
+	echo "$results" | awk 'NR>1{print prev} {prev=$0} END{print "\033[1;32m" prev "\033[0m"}'
+else
+	echo "No tags found for this digest"
+fi

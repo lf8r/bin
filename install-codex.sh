@@ -2,7 +2,7 @@
 set -e
 sudo apt update
 sudo apt install -y npm
-sudo npm install -g @openai/codex@0.142.5
+sudo npm install -g @openai/codex@0.148.0
 
 # # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
 # source ~/.bashrc
