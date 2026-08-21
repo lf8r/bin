@@ -17,4 +17,4 @@ Generate a commit message in two sections:
    * Before these changes.
    * After these changes.
 
-Show the commit message you generated. Ask me for my approval. If I give the approval, commit the changes with your commit message. NEVER push the changes.
+Show the complete commit message you generated. Ask me for my approval. If I give the approval, commit the changes with the complete commit message. DO NOT generate a "conventional commit" message -- USE the one you generated above. NEVER push the changes.
