@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+# Codex configuration for qwen3.8:27b with explicit "high" reasoning effort and YOLO mode enabled.
+codex --oss -m qwen3.8:27b-mlx model_reasoning_effort='"hight"' --yolo
