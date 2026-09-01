@@ -1,7 +1,10 @@
 #!/bin/bash
 set -e
-LLAMA_CACHE=/Volumes/FAST1/llama-models llama-server \
-  -hf unsloth/Qwen3-Coder-Next-GGUF:UD-Q4_K_M \
+llama-server \
+  -m /Volumes/FAST1/llama-models/Qwen3-Coder-Next-UD-Q4_K_XL.gguf \
+  --alias qwen3-coder-next-cdx \
+  --verbose \
+  --host 0.0.0.0 \
   --port 8080 \
   --ctx-size 131072 \
   --jinja \
