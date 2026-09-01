@@ -1,0 +1,1 @@
+codex --local-provider remote_lmstudio --oss -m qwen3-coder-next-mlx --yolo

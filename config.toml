@@ -1,10 +1,19 @@
 # Set the default local provider
 oss_provider = "ollama-custom"
+# oss_provider = "remote_lmstudio"
 
 [model_providers.ollama-custom]
 name = "Ollama Local"
 base_url = "http://localhost:11434/v1"
 wire_api = "responses"
+
+[model_providers.remote_lmstudio]
+name = "LM Studio Remote"
+base_url = "http://m4:2345/v1"
+
+[profiles.local-agent]
+model_provider = "llamacpp"
+model = "qwen3-coder-next-cdx"
 
 [profiles.local]
 model_provider = "ollama-custom"
@@ -16,5 +25,12 @@ trust_level = "trusted"
 [projects."/home/sdasgupta/dev/github.com/lf8r/genaix-agents"]
 trust_level = "trusted"
 
+[projects."/home/sdasgupta/bin"]
+trust_level = "trusted"
+
+[projects."/var/tmp/genaix-agents"]
+trust_level = "trusted"
+
 [tui.model_availability_nux]
 "gpt-5.5" = 2
+"gpt-5.6-sol" = 4
