@@ -1,3 +1,3 @@
 #!/bin/bash
 set -e
-lms server stop
+pkill -f "lms_start_macos.sh"
