@@ -14,8 +14,8 @@ fi
 HOSTNAME=`hostname`
 
 if [[ "$HOSTNAME" == m4* ]]; then
-   TARGETS="/Volumes/8TBA/data/backups"
-   export SRC="/Volumes/FAST1/m4"
+   TARGETS="/Volumes/DATA4/backups/m4"
+   export SRC="/Volumes/FAST1/m4/parallels"
 elif [[ "$HOSTNAME" == m3* ]]; then
    export SRC="/Volumes/FAST3/m3"
 #  TARGETS="/Volumes/DATA1/backups /Volumes/DATA3/backups /Volumes/DATA4/backups"
