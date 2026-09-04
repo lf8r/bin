@@ -21,7 +21,7 @@ echo "Starting LM Studio Headless Daemon and Server..."
 
 # 2. Start the OpenAI-compatible HTTP local API server
 # Added --cors and bound to localhost (add --host 0.0.0.0 if you need network access)
-"$LMS" server start --port 1234
+"$LMS" server start --port 1234 --bind 0.0.0.0
 
 echo "------------------------------------------------------"
 echo "LM Studio is running in the FOREGROUND."
