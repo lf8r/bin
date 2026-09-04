@@ -1,0 +1,3 @@
+#!/bin/bash
+set -e
+codex --oss -m qwen3-coder-next-mlx --yolo

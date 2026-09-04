@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+cp ~/bin/config-lms.toml ~/.codex/config.toml
+# gnome-terminal -- bash -c 'codex --oss -m qwen3-coder-next-mlx --yolo'
+gnome-terminal -- bash -c 'codex --oss -m qwen3-coder-next-mlx@4bit --yolo'
