@@ -1,3 +1,5 @@
 #!/bin/bash
 set -e
-gnome-terminal -- bash -c xh
+# cp ~/bin/config.toml ~/.codex/config.toml
+# gnome-terminal -- bash -c 'codex --oss -m qwen3-coder-next:latest --yolo'
+gnome-terminal -- bash -c 'OPENAI_BASE_URL="http://localhost:11434/v1" OPENAI_API_KEY="ollama" codex --oss -m qwen3-coder-next:latest --yolo'

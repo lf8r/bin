@@ -1,3 +1,3 @@
 #!/bin/bash
 set -e
-gnome-terminal -- bash -c xhh
+gnome-terminal -- bash -c 'codex --oss -m qwen3-coder-next:q8_0 --yolo'
