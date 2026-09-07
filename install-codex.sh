@@ -17,3 +17,5 @@ cd ~
 # npx skills@latest add mattpocock/skills
 mkdir -p ~/.agents/skills
 rsync -Partv ~/bin/codex/* ~/.agents/skills
+
+cp ~/bin/codex/AGENTS.md ~/.codex/.
