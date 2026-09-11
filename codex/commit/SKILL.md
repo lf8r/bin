@@ -20,4 +20,4 @@ Generate a commit message in two sections:
 
 Show the complete commit message you generated. Ask me for my approval. If I give the approval, commit the changes using ONLY the exact commit message I approved. DO NOT generate a "conventional commit" message. NEVER push the changes.
 
-IMPORTANT: When committing after approval, use the EXACT commit message body that you showed to the user for approval, nothing more, nothing less.
+IMPORTANT: When committing after approval, use the EXACT commit message body that you showed to the user for approval - preserve all formatting, line breaks, and wording precisely as approved. DO NOT modify, rephrase, or reformat the commit message in any way.
