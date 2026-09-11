@@ -7,13 +7,12 @@ if [[ "$(uname)" != "Darwin" ]]; then
 fi
 
 # Check arguments
-if [[ $# -ne 2 ]]; then
-    echo "Usage: $0 <fully_qualified_file_path.gguf> <custom-model-name>"
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <fully_qualified_file_path.gguf>ß"
     exit 1
 fi
 
 file_path="$1"
-custom_model_name="$2"
 
 # Check if file exists and ends with .gguf
 if [[ ! -f "$file_path" ]]; then
@@ -26,11 +25,12 @@ if [[ ! "$file_path" =~ \.gguf$ ]]; then
     exit 1
 fi
 
-# Get just the filename for the Modelfile
+# Get just the filename for the Modelfile and use this as the model name.
 file_name=$(basename "$file_path")
+custom_model_name="$file_name"
 
 # Create Modelfile on a single line
-echo "FROM $file_name" > Modelfile
+echo "FROM $file_path" > Modelfile
 
 # Run ollama create command
 ollama create "$custom_model_name" -f ./Modelfile

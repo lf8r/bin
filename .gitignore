@@ -6,3 +6,4 @@ go1*
 msgen
 .DS_Store
 **/*/__pycache__
+Modelfile
