@@ -1,2 +1,2 @@
 #!/bin/bash
-docker image list
+docker image ls --format "table {{.Repository}}\t{{.Tag}}\t{{.ID}}\t{{.CreatedAt}}\t{{.Size}}"
