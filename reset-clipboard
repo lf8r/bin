@@ -1,0 +1,6 @@
+#!/bin/bash
+# Clear and reset the primary and clipboard selections to release stuck app holds
+echo -n "" | xclip -selection clipboard
+echo -n "" | xclip -selection primary
+echo -n "" | xclip -selection secondary
+notify-send "Clipboard" "X11 Selection Buffers Reset Successfully"
