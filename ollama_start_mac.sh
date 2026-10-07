@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-OLLAMA_CONTEXT_LENGTH=262144
-#OLLAMA_CONTEXT_LENGTH=131072
+# OLLAMA_CONTEXT_LENGTH=262144
+OLLAMA_CONTEXT_LENGTH=131072
 
 # Update this path to point to your models directory
-OLLAMA_MODELS_DIR="/Volumes/FAST1/models"
+OLLAMA_MODELS_DIR="/Volumes/FAST5/models"
 
 OLLAMA_KEEP_ALIVE=30m
 
