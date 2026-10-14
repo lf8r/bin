@@ -13,7 +13,10 @@ fi
 
 HOSTNAME=`hostname`
 
-if [[ "$HOSTNAME" == m4* ]]; then
+if [[ "$HOSTNAME" == m5* ]]; then
+   TARGETS="m3.local:/Volumes/8TBA/data/backups/m5"
+   export SRC="/Volumes/FAST5/m5/parallels"
+elif [[ "$HOSTNAME" == m4* ]]; then
    TARGETS="/Volumes/DATA4/backups/m4"
    export SRC="/Volumes/FAST1/m4/parallels"
 elif [[ "$HOSTNAME" == m3* ]]; then
