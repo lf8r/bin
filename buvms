@@ -19,7 +19,7 @@ if [[ "$HOSTNAME" == m5* ]]; then
    TARGETS="/Volumes/data/m5"
    export SRC="/Volumes/FAST5/m5/parallels"
 elif [[ "$HOSTNAME" == m4* ]]; then
-   TARGETS="/Volumes/DATA4/backups/m4"
+   TARGETS="/Volumes/data/m4"
    export SRC="/Volumes/FAST1/m4/parallels"
 elif [[ "$HOSTNAME" == m3* ]]; then
    export SRC="/Volumes/FAST3/m3"
