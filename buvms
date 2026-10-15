@@ -14,8 +14,6 @@ fi
 HOSTNAME=`hostname`
 
 if [[ "$HOSTNAME" == m5* ]]; then
-#   rsync -Partv ~/parallels /Volumes/FAST5/m5
-#   TARGETS="m3.local:/Volumes/8TBA/data/backups/m5"
    TARGETS="/Volumes/data/m5"
    export SRC="/Volumes/FAST5/m5/parallels"
 elif [[ "$HOSTNAME" == m4* ]]; then
@@ -23,8 +21,7 @@ elif [[ "$HOSTNAME" == m4* ]]; then
    export SRC="/Volumes/FAST1/m4/parallels"
 elif [[ "$HOSTNAME" == m3* ]]; then
    export SRC="/Volumes/FAST3/m3"
-#  TARGETS="/Volumes/DATA1/backups /Volumes/DATA3/backups /Volumes/DATA4/backups"
-   TARGETS="/Volumes/8TBA/data/backups"
+   TARGETS="/Volumes/data/m3"
 else
    echo "Unknown hostname. Exiting."
    exit 1
