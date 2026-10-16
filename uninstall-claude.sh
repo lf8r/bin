@@ -1,3 +1,3 @@
 #!/bin/bash
 set -e
-claude uninstall
+rm -f $(which claude)
