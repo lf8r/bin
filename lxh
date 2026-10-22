@@ -1,5 +1,14 @@
 #!/bin/bash
 set -e
-# cp ~/bin/config.toml ~/.codex/config.toml
-# gnome-terminal -- bash -c 'codex --oss -m qwen3-coder-next:latest --yolo'
-gnome-terminal -- bash -c 'OPENAI_BASE_URL="http://localhost:11434/v1" OPENAI_API_KEY="ollama" codex --oss -m qwen3-coder-next:latest --yolo'
+
+# Detect OS and run appropriate command
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS terminal variant
+    osascript -e 'tell application "Terminal" to activate' -e "tell application \"Terminal\" to do script \"cd \\\"$PWD\\\" && \\\"$PWD/codex-local.sh\\\"\""
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # Linux/gnome terminal variant
+    gnome-terminal -- bash -c 'OPENAI_BASE_URL="http://localhost:11434/v1" OPENAI_API_KEY="ollama" codex --oss -m qwen3-coder-next:latest --yolo'
+else
+    echo "Unsupported OS: $OSTYPE" >&2
+    exit 1
+fi
