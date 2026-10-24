@@ -27,7 +27,7 @@ else
     echo "Installing Codex via npm on Linux..."
     sudo apt update
     sudo apt install -y npm
-    sudo npm install -g @openai/codex@0.154.0
+    sudo npm install -g @openai/codex@0.149.0
     
     mkdir -p ~/.codex
     touch ~/.codex/config.toml
