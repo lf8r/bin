@@ -1,4 +1,10 @@
 #!/bin/bash
 set -e
-# codex --profile qwen --yolo
-codex --oss -m qwen3-coder-next:latest --yolo
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	OPENAI_BASE_URL="http://localhost:11434/v1" OPENAI_API_KEY="ollama" codex --oss -m qwen3-coder-next:latest --yolo
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	codex --oss -m qwen3-coder-next:latest --yolo
+else
+    echo "Unsupported OS: $OSTYPE" >&2
+    exit 1
+fi

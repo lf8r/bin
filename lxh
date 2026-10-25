@@ -3,8 +3,8 @@ set -e
 
 # Detect OS and run appropriate command
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS terminal variant
-    osascript -e 'tell application "Terminal" to activate' -e "tell application \"Terminal\" to do script \"cd \\\"$PWD\\\" && \\\"$PWD/codex-local.sh\\\"\""
+    # macOS terminal variant - launch xh in a new Terminal window from current directory
+    osascript -e 'tell application "Terminal" to activate' -e "tell application \"Terminal\" to do script \"cd \\\"$PWD\\\" && \\\"$PWD/xh\\\"\""
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux/gnome terminal variant
     gnome-terminal -- bash -c 'OPENAI_BASE_URL="http://localhost:11434/v1" OPENAI_API_KEY="ollama" codex --oss -m qwen3-coder-next:latest --yolo'
