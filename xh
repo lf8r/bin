@@ -1,9 +1,13 @@
 #!/bin/bash
 set -e
+
+# Use model name from command line argument, default to qwen3-coder-next:latest
+MODEL_NAME="${1:-qwen3-coder-next:latest}"
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
-	OPENAI_BASE_URL="http://localhost:11434/v1" OPENAI_API_KEY="ollama" codex --oss -m qwen3-coder-next:latest --yolo
+    OPENAI_BASE_URL="http://localhost:11434/v1" OPENAI_API_KEY="ollama" codex --oss -m "$MODEL_NAME" --yolo
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-	codex --oss -m qwen3-coder-next:latest --yolo
+    codex --oss -m "$MODEL_NAME" --yolo
 else
     echo "Unsupported OS: $OSTYPE" >&2
     exit 1
