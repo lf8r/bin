@@ -1,0 +1,42 @@
+#!/bin/bash
+set -e
+
+# Parse arguments
+DRYRUN=false
+for arg in "$@"; do
+    if [[ "$arg" == "--dryrun" ]]; then
+        DRYRUN=true
+    fi
+done
+
+# Detect terminal based on environment
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS - try Terminal, fallback to osascript directly
+    if command -v osascript &> /dev/null; then
+        CMD="osascript -e \"tell application \\\"Terminal\\\" to do script \\\"cd \\\"\\\"$PWD\\\"\\\"\\\"\""
+    else
+        echo "Error: osascript not found" >&2
+        exit 1
+    fi
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # Linux - try gnome-terminal, fallback to other terminals
+    if command -v gnome-terminal &> /dev/null; then
+        CMD="gnome-terminal -- bash -c \"cd \\\"$PWD\\\"; exec bash\""
+    elif command -v x-terminal-emulator &> /dev/null; then
+        CMD="x-terminal-emulator -e \"bash -c 'cd \\\"$PWD\\\"; exec bash'\""
+    else
+        echo "Error: No terminal emulator found (gnome-terminal, x-terminal-emulator)" >&2
+        exit 1
+    fi
+else
+    echo "Error: Unsupported OS type: $OSTYPE" >&2
+    exit 1
+fi
+
+if [[ "$DRYRUN" == "true" ]]; then
+    echo "$CMD"
+    exit 0
+fi
+
+# Execute the command
+eval "$CMD"
