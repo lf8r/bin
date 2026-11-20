@@ -6,6 +6,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS uninstallation
     echo "Uninstalling Codex on macOS..."
 
+    sudo npm uninstall -g @openai/codex
     # Remove the codex-local.sh script
     rm -f ~/codex-local.sh
 
@@ -14,10 +15,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     # Remove AGENTS.md if it was copied from codex
     rm -f ~/.codex/AGENTS.md
-
-    # Uninstall Codex via Homebrew
-    echo "Uninstalling Codex via Homebrew..."
-    brew uninstall --cask codex
 
     echo "Codex uninstalled successfully on macOS!"
 else

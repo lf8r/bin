@@ -1,0 +1,13 @@
+# Example .x-config file for the x script
+# Copy this file to ~/.x-config or ./.x-config to use
+
+# Provider URLs
+standard=http://localhost:11434/v1
+
+# Model aliases
+coding=qwen3-coder-next:latest
+medium=qwen3-coder-next:latest
+large=qwen3-coder-next:q8_0
+frontier=qwen3.8-flash-next:125b-mlx
+vision=llava-phi3:latest
+visionlarge=llava:latest

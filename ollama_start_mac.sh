@@ -1,4 +1,6 @@
 #!/bin/bash
+set +e
+brew services stop ollama
 set -e
 
 # OLLAMA_CONTEXT_LENGTH=262144

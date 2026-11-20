@@ -1,16 +1,16 @@
 #!/bin/bash
 set -e
 
-# Use model name from command line argument, default to qwen3-coder-next:latest
-MODEL_NAME="${1:-qwen3-coder-next:latest}"
+# Collect all arguments to pass to xh
+ARGS=("$@")
 
 # Detect OS and run appropriate command
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS terminal variant - launch xh in a new Terminal window from current directory
-    osascript -e 'tell application "Terminal" to activate' -e "tell application \"Terminal\" to do script \"cd \\\"$PWD\\\" && xh \\\"$MODEL_NAME\\\"\""
+    osascript -e 'tell application "Terminal" to activate' -e "tell application \"Terminal\" to do script \"cd \\\"$PWD\\\" && xh ${ARGS[*]@Q}\""
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux/gnome terminal variant - invoke xh in a new terminal
-    gnome-terminal -- bash -c "exec xh \"$MODEL_NAME\""
+    gnome-terminal -- bash -c "exec xh ${ARGS[*]@Q}"
 else
     echo "Unsupported OS: $OSTYPE" >&2
     exit 1

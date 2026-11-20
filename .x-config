@@ -1,0 +1,16 @@
+# Example .x-config file for the x script
+# Copy this file to ~/.x-config or ./.x-config to use
+
+# Provider URLs
+export standard=http://localhost:11434/v1
+export m3=http://192.168.1.20:11434/v1
+export m4=http://192.168.1.21:11434/v1
+export m5=http://192.168.1.23:11434/v1
+
+# Model aliases (exported so they work in subshells)
+export coding=qwen3-coder-next:latest
+export medium=qwen3-coder-next:latest
+export large=qwen3-coder-next:q8_0
+export frontier=qwen3.8-flash-next:125b-mlx
+export vision=llava-phi3:latest
+export visionlarge=llava:latest
